@@ -9,6 +9,7 @@ import ClassCompoProps from './05ClassCompoProps.jsx'
 import Lifecycle from './07Lifecycle'
 import Lifecyclelaoder from './08Lifecyclelaoder'
 import ConditionalRendering from './10ConditionalRendering.jsx'
+import ListKeysMap from './11ListKeysMap.jsx'
 
 export default class ClassCompoRouter extends Component {
     render() {
@@ -24,6 +25,7 @@ export default class ClassCompoRouter extends Component {
                         <Route path='/lifecycle' element={< Lifecycle />}></Route >
                         <Route path='/lifecyclelaoder' element={< Lifecyclelaoder />}></Route >
                         <Route path='/conditionalrendering' element={< ConditionalRendering />}></Route >
+                        <Route path='/listKeysmap' element={< ListKeysMap />}></Route >
                     </Route>
 
                 </Routes>
