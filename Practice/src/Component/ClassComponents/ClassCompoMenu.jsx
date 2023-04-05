@@ -15,6 +15,8 @@ export default class ClassCompoMenu extends Component {
                     <li> <Link to='lifecyclelaoder' className='h4 text-capitalize'>class component life cycle  laoder</Link> </li>
                     <li> <Link to='conditionalrendering' className='h4 text-capitalize'>class component conditional rendering</Link> </li>
                     <li> <Link to='listKeysmap' className='h4 text-capitalize'>Class Compo List Keys</Link> </li>
+                    <li> <Link to='classcompocistceysexample' className='h4 text-capitalize'>Class Compo List Keys example</Link> </li>
+                    <li> <Link to='classCompocynamicsubMenu' className='h4 text-capitalize'>Class Compo Dynamic SubMenu</Link> </li>
                 </ul>
                 <Outlet></Outlet>
             </>

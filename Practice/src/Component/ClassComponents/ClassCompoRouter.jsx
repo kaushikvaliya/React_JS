@@ -26,6 +26,8 @@ export default class ClassCompoRouter extends Component {
                         <Route path='/lifecyclelaoder' element={< Lifecyclelaoder />}></Route >
                         <Route path='/conditionalrendering' element={< ConditionalRendering />}></Route >
                         <Route path='/listKeysmap' element={< ListKeysMap />}></Route >
+                        <Route path='/classcompocistceysexample' element={< ClassCompoListKeyMapExample />}></Route >
+                        <Route path='/classCompocynamicsubMenu' element={< ClassCompoDynamicSubMenu />}></Route >
                     </Route>
 
                 </Routes>
