@@ -6,10 +6,14 @@ import Homepage from './Homepage';
 import Featurespage from './Features.jsx';
 import Example from './example.jsx';
 import Aboutpage from './Aboutpage.jsx';
-
+import Arror from '../src/CommComponet/Arror';
 const ClassCompoRouter = React.lazy(() => import('./Component/ClassComponents/ClassCompoRouter'));
 
 const menrouter = createBrowserRouter([
+    {
+        path: "*",
+        element: <Arror></Arror>
+    },
     {
         path: "/",
         element: <><Headerfile /><Homepage /></>

@@ -28,7 +28,7 @@ class headern extends Component {
         })
         return (
             <>
-                <MDBNavbar expand='lg' light bgColor='light' className='w-100'>
+                <MDBNavbar expand='lg' light bgColor='light' className='fixed-top'> {/*sticky-top */}
                     <MDBContainer fluid>
 
                         <MDBNavbarBrand href='#'>Brand</MDBNavbarBrand>

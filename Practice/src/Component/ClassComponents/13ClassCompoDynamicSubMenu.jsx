@@ -15,17 +15,24 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 class ClassCompoDynamicSubMenu extends Component {
+
+    // sumoftownumber = (tada) => {
+    //     console.log("kaushik");
+    // }
+    // sumoftownumber();
     render() {
+
         const menuItems = [
             {
                 title: 'Home',
-                url: '/',
+                url: `/`,
             },
             {
                 title: 'about',
-                url: '/about',
+                url: `/about`,
             }
             , {
                 title: 'Services',
@@ -63,25 +70,25 @@ class ClassCompoDynamicSubMenu extends Component {
                     },
                 ],
             },
-
         ];
-        const MenuData = menuItems.map((data) => {
-            console.log(data.submenu);
+
+
+        const MenuData = menuItems.map((data, index) => {
+            // console.log(data.submenu);
             if (data.submenu != undefined) {
-                var submenudata = data.submenu.map((submenu) => {
-                    console.log("called inner loop", submenu);
-                    return <MDBDropdownItem link>{submenu.title}</MDBDropdownItem>
+                var submenudata = data.submenu.map((submenu, index) => {
+                    // console.log("called inner loop", submenu);
+                    return <MDBDropdownItem key={index} link>{submenu.title}</MDBDropdownItem>
                 })
             }
-
             if (data.submenu == null) {
-                return <MDBNavbarItem>
-                    <MDBNavbarLink>
+                return <MDBNavbarItem key={index}>
+                    <Link className='nav-link' to={data.url}>
                         {data.title}
-                    </MDBNavbarLink>
+                    </Link>
                 </MDBNavbarItem>
             } else {
-                return < MDBNavbarItem >
+                return < MDBNavbarItem key={index} >
                     <MDBDropdown>
                         <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                             {data.title}
@@ -92,9 +99,6 @@ class ClassCompoDynamicSubMenu extends Component {
                     </MDBDropdown>
                 </ MDBNavbarItem>
             }
-
-
-
         })
         return (
             <>
@@ -110,13 +114,10 @@ class ClassCompoDynamicSubMenu extends Component {
                         >
                             <MDBIcon icon='bars' fas />
                         </MDBNavbarToggler> */}
-
                         <MDBCollapse navbar >
                             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
                                 {MenuData}
                             </MDBNavbarNav>
-
-
                         </MDBCollapse>
                     </MDBContainer>
                 </MDBNavbar>

@@ -10,6 +10,10 @@ import Lifecycle from './07Lifecycle'
 import Lifecyclelaoder from './08Lifecyclelaoder'
 import ConditionalRendering from './10ConditionalRendering.jsx'
 import ListKeysMap from './11ListKeysMap.jsx'
+import ClassCompoListKeyMapExample from './12ClassCompoListKeyMapExample.jsx'
+import ClassCompoDynamicSubMenu from './13ClassCompoDynamicSubMenu.jsx'
+import ClassCompoSpreadRest from './14ClassCompoSpreadRest.jsx'
+import ClassCompoControlledCompo from './15ClassCompoControlledCompo.jsx'
 
 export default class ClassCompoRouter extends Component {
     render() {
@@ -28,6 +32,8 @@ export default class ClassCompoRouter extends Component {
                         <Route path='/listKeysmap' element={< ListKeysMap />}></Route >
                         <Route path='/classcompocistceysexample' element={< ClassCompoListKeyMapExample />}></Route >
                         <Route path='/classCompocynamicsubMenu' element={< ClassCompoDynamicSubMenu />}></Route >
+                        <Route path='/classcompospreadrest' element={< ClassCompoSpreadRest />}></Route >
+                        <Route path='/classcompocontrolledcompo' element={< ClassCompoControlledCompo />}></Route >
                     </Route>
 
                 </Routes>
