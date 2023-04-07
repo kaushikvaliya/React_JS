@@ -19,6 +19,7 @@ export default class ClassCompoMenu extends Component {
                     <li><Link to='classCompocynamicsubMenu' className='h4 text-capitalize'>Class Compo Dynamic SubMenu</Link> </li>
                     <li><Link to='classcompospreadrest' className='h4 text-capitalize'>Class Compo Spread Rest</Link> </li>
                     <li><Link to='classcompocontrolledcompo' className='h4 text-capitalize'>Class Compo Controlled Compo</Link> </li>
+                    <li><Link to='classcompocontrolledcompoobject' className='h4 text-capitalize'>Class Compo Controlled Compo Object</Link> </li>
                 </ul>
                 <Outlet></Outlet>
             </>

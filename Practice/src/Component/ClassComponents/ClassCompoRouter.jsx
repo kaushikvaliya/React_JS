@@ -14,6 +14,7 @@ import ClassCompoListKeyMapExample from './12ClassCompoListKeyMapExample.jsx'
 import ClassCompoDynamicSubMenu from './13ClassCompoDynamicSubMenu.jsx'
 import ClassCompoSpreadRest from './14ClassCompoSpreadRest.jsx'
 import ClassCompoControlledCompo from './15ClassCompoControlledCompo.jsx'
+import ClassCompoControlledCompoObject from './15.1ClassCompoControlledCompoObject.jsx'
 
 export default class ClassCompoRouter extends Component {
     render() {
@@ -34,6 +35,7 @@ export default class ClassCompoRouter extends Component {
                         <Route path='/classCompocynamicsubMenu' element={< ClassCompoDynamicSubMenu />}></Route >
                         <Route path='/classcompospreadrest' element={< ClassCompoSpreadRest />}></Route >
                         <Route path='/classcompocontrolledcompo' element={< ClassCompoControlledCompo />}></Route >
+                        <Route path='/classcompocontrolledcompoobject' element={< ClassCompoControlledCompoObject />}></Route >
                     </Route>
 
                 </Routes>

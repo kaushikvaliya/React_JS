@@ -8,7 +8,9 @@ class ClassCompoPropse extends Component {
 
             <div className='row my-5'>
                 <div className="col-3">
-                    <CustomCardStrcutre btntext='Endeavour' title="Endeavour" img={Endeavour} text='Ford Endeavour Price: Ford retails the full-size SUV from Rs 29.99 lakh to Rs 36.25 lakh (ex-showroom Delhi). Ford Endeavour Variants: It is available in four ...'></CustomCardStrcutre>
+                    <CustomCardStrcutre btntext='Endeavour' title="Endeavour" img={Endeavour} text='Ford Endeavour Price: Ford retails the full-size SUV from Rs 29.99 lakh to Rs 36.25 lakh (ex-showroom Delhi). Ford Endeavour Variants: It is available in four ...'>
+                        <h2>lkjhgfdxz</h2>
+                    </CustomCardStrcutre>
                 </div>
                 <div className="col-3">
                     <CustomCardStrcutre btntext='Fortuner' title="Fortuner" img="/img/toyota-fortuner.png" text='Toyota Fortuner is a 7 seater SUV available in a price range of ₹ 32.58 - 50.34 Lakh. It is available in 7 variants, 2694 to 2755 cc engine options and 2 ...'>
