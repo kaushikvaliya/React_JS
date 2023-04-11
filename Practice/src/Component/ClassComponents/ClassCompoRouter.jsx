@@ -15,6 +15,13 @@ import ClassCompoDynamicSubMenu from './13ClassCompoDynamicSubMenu.jsx'
 import ClassCompoSpreadRest from './14ClassCompoSpreadRest.jsx'
 import ClassCompoControlledCompo from './15ClassCompoControlledCompo.jsx'
 import ClassCompoControlledCompoObject from './15.1ClassCompoControlledCompoObject.jsx'
+import ClassCompoUnControlledCompo from './16ClassCompoUnControlledCompo.jsx'
+import ClassCompoCompositionVsInheritance from './17ClassCompoCompositionVsInheritance.jsx'
+import ClassCompoStateLifting from './19ClassCompoStateLifting/mainfile.jsx'
+import HOC_in_classCompo from './20HOC_in_classCompo/01mainfile.jsx'
+import FetchAPI from './21FetchAPI.jsx'
+
+
 
 export default class ClassCompoRouter extends Component {
     render() {
@@ -36,6 +43,11 @@ export default class ClassCompoRouter extends Component {
                         <Route path='/classcompospreadrest' element={< ClassCompoSpreadRest />}></Route >
                         <Route path='/classcompocontrolledcompo' element={< ClassCompoControlledCompo />}></Route >
                         <Route path='/classcompocontrolledcompoobject' element={< ClassCompoControlledCompoObject />}></Route >
+                        <Route path='/classcompouncontrolledcompo' element={< ClassCompoUnControlledCompo />}></Route >
+                        <Route path='/classcompocompositionvsInheritance' element={< ClassCompoCompositionVsInheritance />}></Route >
+                        <Route path="classcompocompostatelifting" element={<ClassCompoStateLifting />} />
+                        <Route path="classcompohoc" element={<HOC_in_classCompo />} />
+                        <Route path="fetchapi" element={<FetchAPI />} />
                     </Route>
 
                 </Routes>

@@ -20,6 +20,11 @@ export default class ClassCompoMenu extends Component {
                     <li><Link to='classcompospreadrest' className='h4 text-capitalize'>Class Compo Spread Rest</Link> </li>
                     <li><Link to='classcompocontrolledcompo' className='h4 text-capitalize'>Class Compo Controlled Compo</Link> </li>
                     <li><Link to='classcompocontrolledcompoobject' className='h4 text-capitalize'>Class Compo Controlled Compo Object</Link> </li>
+                    <li><Link to='classcompouncontrolledcompo' className='h4 text-capitalize'>Class Compo UnControlled Compo</Link> </li>
+                    <li><Link to='classcompocompositionvsInheritance' className='h4 text-capitalize'>Class Compo CompositionVsInheritance</Link> </li>
+                    <li><Link to='classcompocompostatelifting' className='h4 text-capitalize'>Class Compo State Lifting</Link> </li>
+                    <li><Link to='classcompohoc' className='h4 text-capitalize'>Class Compo high order</Link> </li>
+                    <li><Link to='fetchapi' className='h4 text-capitalize'>fetch API</Link> </li>
                 </ul>
                 <Outlet></Outlet>
             </>
