@@ -1,11 +1,36 @@
 import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import CustomCardStrcutre from './06CustomCardStrcutre'
 import Endeavour from '../ClassComponents/endeavour.png'
 
 class ClassCompoPropse extends Component {
     render() {
-        return (
+        const codeString = `class App extends React.Component {  
+            render() {     
+               return (  
+                   <div>  
+                     <h1> Welcome to { this.props.name } </h1>    
+                     <p>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam 
+                     similique inventore asperiores aliquid fuga soluta consectetur alias debitis non?  </p>          
+                   </div>  
+               );  
+            }  
+         }  
+         export default App;    
+        
+        `;
 
+
+        const codeString1 = `import React from 'react';  
+        import ReactDOM from 'react-dom';  
+        import App from './App.js';  
+          
+        ReactDOM.render(<App name = "JavaTpoint!!" />, 
+        document.getElementById('app'));      
+        
+        `;
+        return (
             <div className='row my-5'>
                 <div className="col-3">
                     <CustomCardStrcutre btntext='Endeavour' title="Endeavour" img={Endeavour} text='Ford Endeavour Price: Ford retails the full-size SUV from Rs 29.99 lakh to Rs 36.25 lakh (ex-showroom Delhi). Ford Endeavour Variants: It is available in four ...'>
@@ -22,7 +47,22 @@ class ClassCompoPropse extends Component {
                 <div className="col-3">
                     <CustomCardStrcutre btntext='Defender' title='Defender' text='Ford Endeavour Price: Ford retails the full-size SUV from Rs 29.99 lakh to Rs 36.25 lakh (ex-showroom Delhi). Ford Endeavour Variants: It is available in four ...' img={process.env.PUBLIC_URL + '/img/defender.png'}></CustomCardStrcutre>
                 </div>
+
+
+                <div className="mt-3">
+                    <h2>syntax :</h2>
+                    <SyntaxHighlighter className="rounded-5 mt-3" language="jsx" style={atomOneDarkReasonable}>
+                        {codeString}
+                    </SyntaxHighlighter>
+
+                    <SyntaxHighlighter className="rounded-5 mt-3" language="jsx" style={atomOneDarkReasonable}>
+                        {codeString1}
+                    </SyntaxHighlighter>
+                </div>
+
             </div>
+
+
         );
     }
 }

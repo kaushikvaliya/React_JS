@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default class ClassCompoState extends Component {
     constructor(props) {
@@ -22,6 +24,29 @@ export default class ClassCompoState extends Component {
 
     render() {
 
+        const codeString = `class Car extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = {
+                brand: "Ford",
+                model: "Mustang",
+                color: "red",
+                year: 1964
+              };
+            }
+            render() {
+              return (
+                <div>
+                  <h1>My {this.state.brand}</h1>
+                  <p>
+                    It is a {this.state.color}
+                    {this.state.model}
+                    from {this.state.year}.
+                  </p>
+                </div>
+              );
+            }
+          }`;
         // render ni undar data  Changing na thai 
         // let Something = "Data"
         // const changeDataFunc = () => {
@@ -42,6 +67,11 @@ export default class ClassCompoState extends Component {
                 <button onClick={this.handleClick}>
                     Click here!
                 </button>
+
+
+                <SyntaxHighlighter className="rounded-5 mt-3" language="jsx" style={atomOneDarkReasonable}>
+                    {codeString}
+                </SyntaxHighlighter>
             </div>
         )
     }

@@ -10,14 +10,14 @@ import Arror from '../src/CommComponet/Arror';
 const ClassCompoRouter = React.lazy(() => import('./Component/ClassComponents/ClassCompoRouter'));
 
 const menrouter = createBrowserRouter([
-    {
-        path: "*",
-        element: <Arror></Arror>
-    },
+    // {
+    //     path: "*",
+    //     element: <Arror></Arror>
+    // },
     {
         path: "/",
-        element: <><Headerfile /><Homepage /></>
-        ,
+        element: <><Headerfile /><Homepage /></>,
+        errorElement: <Arror></Arror>,
 
     }, {
         path: "/Features",

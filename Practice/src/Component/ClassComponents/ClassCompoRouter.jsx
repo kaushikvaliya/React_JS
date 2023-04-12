@@ -27,8 +27,8 @@ export default class ClassCompoRouter extends Component {
     render() {
         return (
             <>
-                <Routes>
-                    <Route path='/' element={<ClassCompoMenu />}>
+                <Routes >
+                    <Route path='/' element={<ClassCompoMenu />} >
                         <Route path='/classcompointro' element={<ClassCompoIntor />}></Route>
                         <Route path='/classcompoconstructor' element={< ClassCompoConstructor />}></Route >
                         <Route path='/classcompoState' element={< ClassCompoState />}></Route >
@@ -50,7 +50,7 @@ export default class ClassCompoRouter extends Component {
                         <Route path="fetchapi" element={<FetchAPI />} />
                     </Route>
 
-                </Routes>
+                </Routes >
             </>
         )
     }
