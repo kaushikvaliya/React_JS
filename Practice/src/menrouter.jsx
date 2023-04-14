@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 // import Headerfile from './CommComponet/headerfile';
 import Headerfile from './CommComponet/Headerfilenew';
 import Homepage from './Homepage';
-import Featurespage from './Features.jsx';
+import Featurespage from './Product.jsx';
 import Example from './example.jsx';
 import Aboutpage from './Aboutpage.jsx';
 import Arror from '../src/CommComponet/Arror';
@@ -20,7 +20,7 @@ const menrouter = createBrowserRouter([
         errorElement: <Arror></Arror>,
 
     }, {
-        path: "/Features",
+        path: "/product",
         element:
             <>
                 <Headerfile></Headerfile>

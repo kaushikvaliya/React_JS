@@ -17,7 +17,7 @@ class headern extends Component {
             { key: `/`, value: "Home" },
             { key: `/about`, value: "About" },
             { key: `/examplepage`, value: "Example" },
-            { key: `/Features`, value: "Features" }
+            { key: `/product`, value: "Product" }
         ]
         const mapdata = data.map(({ key, value }, index) => {
             return (
