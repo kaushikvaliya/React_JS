@@ -17,7 +17,7 @@ const Examplepage = () => {
                     </div>
                     <div className="col-lg-6">
 
-                        <Link to="#" className='display-6 text-center d-block'>Function Component </Link>
+                        <Link to="functionalcompo" className='display-6 text-center d-block'>Function Component </Link>
                         {/* <Outlet></Outlet> */}
                     </div>
 

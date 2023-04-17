@@ -16,6 +16,9 @@ import { Link } from 'react-router-dom';
 class ProductCard extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            active: false
+        }
         this.state = { proudtdata: { productname: undefined, productprice: undefined }, count: 0, productamount: 0, buttonvalue: "Add to cart", }
 
         this.productname = React.createRef();
@@ -24,7 +27,13 @@ class ProductCard extends Component {
     }
 
 
+
     cardvalue = (event) => {
+
+
+        this.setState({ active: true })
+
+
         console.log("called");
         console.log(this.state.buttonvalue);
         this.setState({ buttonvalue: "go to card" })
@@ -58,9 +67,12 @@ class ProductCard extends Component {
 
     render() {
 
+
+        let btn_class = this.state.active ? "d-block" : "d-none";
+
         return (
             <>
-                <MDBContainer fluid className="my-5">
+                <MDBContainer fluid className="my-5 " >
                     <MDBRow className="justify-content-center">
                         <MDBCol >
                             <MDBCard style={{ borderRadius: "15px" }}>
@@ -110,7 +122,7 @@ class ProductCard extends Component {
                                         <p>
                                             ₹
                                             <a href="#!" className="text-dark" ref={this.productprice} >
-                                                39999
+                                                {this.props.price}
                                             </a>
                                         </p>
                                         <p className="text-dark">#### 8787</p>
@@ -132,29 +144,31 @@ class ProductCard extends Component {
                 </MDBContainer >
 
 
-                <div className="container">
+                <div className={btn_class}>
+                    <div className="container">
 
-                    <div className="row my-5">
-                        <div className="col-lg-12 ">
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    {JSON.stringify(this.state.proudtdata.productname)}
-                                </div>
-                                <div className="col-lg-6">
-                                    {JSON.stringify(this.state.productamount)}
-                                    {/* {JSON.stringify(this.state.proudtdata.productprice)} */}
+                        <div className="row my-5">
+                            <div className="col-lg-12 ">
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        {JSON.stringify(this.state.proudtdata.productname)}
+                                    </div>
+                                    <div className="col-lg-6">
+                                        {JSON.stringify(this.state.productamount)}
+                                        {/* {JSON.stringify(this.state.proudtdata.productprice)} */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div className=" d-flex justify-content-between align-items-xxl-center">
-                        <MDBBtn onClick={this.increaseprice} className='d-block'>  + </MDBBtn>
-                        <MDBBtn> {JSON.stringify(this.state.count)}   </MDBBtn>
-                        <MDBBtn onClick={this.decreaseprice} className='d-block '>  -  </MDBBtn>
+                        <div className=" d-flex justify-content-between align-items-xxl-center">
+                            <MDBBtn onClick={this.increaseprice} className='d-block'>  + </MDBBtn>
+                            <MDBBtn> {JSON.stringify(this.state.count)}   </MDBBtn>
+                            <MDBBtn onClick={this.decreaseprice} className='d-block '>  -  </MDBBtn>
+                        </div >
                     </div >
-                </div >
+                </div>
 
             </>
         );
@@ -162,3 +176,5 @@ class ProductCard extends Component {
 }
 
 export default ProductCard;
+
+

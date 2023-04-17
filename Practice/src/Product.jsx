@@ -8,14 +8,13 @@ class Product extends Component {
                 <div className="container">
                     <div className="row  my-5">
                         <div className="col-lg-4">
-                            <Productcard></Productcard>
+                            <Productcard price="10000" ></Productcard>
                         </div>
                         <div className="col-lg-4">
-                            {/* Tops**@43210 */}
-                            <Productcard></Productcard>
+                            <Productcard price="20000"></Productcard>
                         </div>
                         <div className="col-lg-4">
-                            <Productcard></Productcard>
+                            <Productcard price="30000"></Productcard>
                         </div>
                     </div>
                 </div>

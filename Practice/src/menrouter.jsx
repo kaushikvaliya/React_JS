@@ -8,6 +8,7 @@ import Example from './example.jsx';
 import Aboutpage from './Aboutpage.jsx';
 import Arror from '../src/CommComponet/Arror';
 const ClassCompoRouter = React.lazy(() => import('./Component/ClassComponents/ClassCompoRouter'));
+const FunctionalCompoRouter = React.lazy(() => import('./Component/FunctionalComponent/FunctionalCompoRoute'));
 
 const menrouter = createBrowserRouter([
     // {
@@ -53,14 +54,12 @@ const menrouter = createBrowserRouter([
                             <div className="bounce3"></div>
                         </div>
                     </>}>
-                        {/* <Suspense fallback={<div className='page-loader'>Loading...</div>}> */}
                         <ClassCompoRouter />
                     </Suspense>,
-
-                // <Suspense fallback={<div className='page-loader'>Loading...</div>}>
-                // {/* <Suspense fallback={<div className='page-loader'>Loading...</div>}> */}
-                //     <ClassCompoRouter />
-                // </Suspense>,
+            },
+            {
+                path: "functionalcompo/*",
+                element: <Suspense fallback={<h2>Loading...</h2>}><FunctionalCompoRouter /></Suspense>
             },
         ]
     },
