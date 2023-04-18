@@ -1,28 +1,20 @@
+import { MDBBtn } from 'mdb-react-ui-kit';
 import React, { useState } from 'react';
 
-const WelcomeToFunctionalCompo = () => {
-    // const [stateNameAnything,setStateData] = useState("0")
-    // const [stateNameAnything,setStateData] = useState(0)
-    const [stateNameAnything,setStateData] = useState(true)
-    // const [stateNameAnything,setStateData] = useState("something")
-    let data = "Test"
-    const BtnClicked = ()=> {
-        console.log("btn clicked");
-        data = "Update"
-        // setStateData("data")
-        // setStateData(stateNameAnything+1)
-        setStateData(!stateNameAnything)
-        console.log(!stateNameAnything);
+const FunctionalCompoState = () => {
+    const [stateName, setstsct] = useState(true);
+    let btnclick = () => {
+        console.log("called");
+        setstsct(!stateName);
+        console.log(JSON.stringify(stateName));
     }
     return (
         <>
-            {data}
-            <p>State Data : { JSON.stringify(stateNameAnything) }</p>
-            <div>{ stateNameAnything ? <h2>On</h2> : <h2>Off</h2> }</div>
-            <p>Welcome to functional Component in reactjs</p>
-            <button onClick={BtnClicked}>Click</button>
+            <div>{stateName ? <img style={{ width: "10%", display: "block" }} src="https://i.postimg.cc/6QyTynzr/bulb-on.png" alt="" /> : <img style={{ width: "10%", display: "block" }} src="https://i.postimg.cc/KjK1wL3c/bulb-off.png" alt="" />}</div>
+            <MDBBtn className='my-5' onClick={btnclick}>Click</MDBBtn>
+
         </>
     );
 };
 
-export default WelcomeToFunctionalCompo;
+export default FunctionalCompoState;
