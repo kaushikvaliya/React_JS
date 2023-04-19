@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import FunctionalCompoMenu from './FunctionalCompoMenu.jsx';
-import WelcomeToClassCompo from './WelcomeToFunctionalCompo.jsx';
+import WelcomeToFunctional from './WelcomeToFunctionalCompo.jsx';
 import FunctionalCompoState from './02FunctionalCompoState.jsx';
 import FunctionalCompoUseEffect from './03FunctionalCompoUseEffect.jsx';
 
@@ -9,7 +9,7 @@ const FunctionalCompoRoute = () => {
     return (
         <Routes>
             <Route path="/" element={<FunctionalCompoMenu />} >
-                <Route path="functionalcompointro" element={<WelcomeToClassCompo />} />
+                <Route path="functionalcompointro" element={<WelcomeToFunctional />} />
                 <Route path="functionalcompostate" element={<FunctionalCompoState />} />
                 <Route path="functionalcompouseeffect" element={<FunctionalCompoUseEffect />} />
             </Route>

@@ -5,7 +5,7 @@ export default class ClassCompoMenu extends Component {
     render() {
         return (
             <>
-                <ul className='mt-3'>
+                <ul className='mt-3' style={{ width: "91%", margin: "0 auto" }}>
                     <li><Link to='classcompointro' className='h4 text-capitalize'>Class Compo Intro</Link> </li>
                     <li><Link to='classcompoconstructor' className='h4 text-capitalize'>class compo constructor</Link> </li>
                     <li><Link to='classcompoState' className='h4 text-capitalize'>Class Compo State</Link> </li>

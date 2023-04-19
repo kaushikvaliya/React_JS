@@ -5,10 +5,10 @@ const FunctionalCompoMenu = () => {
         <>
             <div className="row">
                 <div className="col-6 offset-6">
-                    <ul>
-                        <li><Link to="functionalcompointro">Functional Compo Intro</Link></li>
-                        <li><Link to="functionalcompostate">Functional Compo State</Link></li>
-                        <li><Link to="functionalcompouseeffect">Functional Compo UseEffect</Link></li>
+                    <ul className='mt-3' style={{ width: "70%", margin: "0 auto" }}>
+                        <li className='h4 text-capitalize'><Link to="functionalcompointro">Functional Compo Intro</Link></li>
+                        <li className='h4 text-capitalize'><Link to="functionalcompostate">Functional Compo useState</Link></li>
+                        <li className='h4 text-capitalize'><Link to="functionalcompouseeffect">Functional Compo UseEffect</Link></li>
                     </ul>
 
                 </div>
