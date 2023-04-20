@@ -2,6 +2,8 @@ import { MDBBtn } from 'mdb-react-ui-kit';
 import React, { useState } from 'react';
 
 const FunctionalCompoState = () => {
+
+
     const [stateName, setstsct] = useState(true);
     const [stateName2, setstsct2] = useState(true);
     let btnclick = () => {
@@ -16,9 +18,9 @@ const FunctionalCompoState = () => {
             <MDBBtn className='my-5' onClick={btnclick}>Click</MDBBtn>
 
 
-
         </>
     );
 };
 
 export default FunctionalCompoState;
+
