@@ -5,6 +5,9 @@ import WelcomeToFunctional from './WelcomeToFunctionalCompo.jsx';
 import FunctionalCompoState from './02FunctionalCompoState.jsx';
 import FunctionalCompoUseEffect from './03FunctionalCompoUseEffect.jsx';
 import FunctionalCompoUseEffectExample from './3.1FunctionalCompoUseEffectExample.jsx';
+import FunctionalCompouseCallback from './04FunctionalCompouseCallback.jsx';
+import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.jsx';
+
 
 const FunctionalCompoRoute = () => {
     return (
@@ -14,6 +17,8 @@ const FunctionalCompoRoute = () => {
                 <Route path="functionalcompostate" element={<FunctionalCompoState />} />
                 <Route path="functionalcompouseeffect" element={<FunctionalCompoUseEffect />} />
                 <Route path="functionalcompouseeffectexample" element={<FunctionalCompoUseEffectExample />} />
+                <Route path="functionalfompousefallback" element={<FunctionalCompouseCallback />} />
+                <Route path="functionalfompousecontext" element={<FunctionalCompoUseContext />} />
             </Route>
         </Routes>
     );
@@ -34,3 +39,7 @@ const FunctionalCompoRoute = () => {
 //     }
 // }
 export default FunctionalCompoRoute;
+
+
+
+// <div className={`app-container ${theme}`}>

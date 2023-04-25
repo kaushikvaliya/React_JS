@@ -1,7 +1,8 @@
+import { MDBBtn, MDBInput } from 'mdb-react-ui-kit';
 import React, { useCallback, useEffect, useState } from 'react';
 const FunctionalCompoUseEffectExample = () => {
 
-    const [formdata, setformdata] = useState({ inputdata: { fname: null, password: null } });
+    const [formdata, setformdata] = useState({ inputdata: { fname: null, password: null, lname: null } });
     const [formdata1, setformdata1] = useState({});
 
 
@@ -33,15 +34,25 @@ const FunctionalCompoUseEffectExample = () => {
         <>
 
 
-            {JSON.stringify(formdata1)}
-            {JSON.stringify(formdata)}
-            <form action="">
-                {/* value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} */}
-                <input type="text" onChange={inpitdada} name="fname" id="title" value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} />
-                <input type="password" onChange={inpitdada} name='password' value={formdata.inputdata.password ? formdata.inputdata.password : ""} />
-                <input type="submit" onClick={save} value="Submit" />
 
-            </form>
+            <div className="row">
+                <div className="col-lg-6">
+
+                    {JSON.stringify(formdata)}
+
+                    <form action="">
+                        <MDBInput className='my-2 d-block' type="text" label="Frist Name" onChange={inpitdada} name="fname" id="title" value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} />
+                        <MDBInput className='my-2' type="lname" label="Last name" onChange={inpitdada} name='lname' value={formdata.inputdata.lname ? formdata.inputdata.lname : ""} />
+                        <MDBInput className='my-2' type="email" label="Email" onChange={inpitdada} name='email' value={formdata.inputdata.email ? formdata.inputdata.email : ""} />
+                        <MDBInput className='my-2' type="password" label="Password" onChange={inpitdada} name='password' value={formdata.inputdata.password ? formdata.inputdata.password : ""} />
+                        <MDBBtn type="submit" onClick={save} value="Submit" >Submit</MDBBtn>
+                    </form>
+                </div>
+                <div className="col-lg-6">
+                    {JSON.stringify(formdata1)}
+                </div>
+            </div >
+
         </>
     );
 };
@@ -50,97 +61,3 @@ export default FunctionalCompoUseEffectExample;
 
 
 
-
-
-// import React, { useState, useCallback, useMemo } from 'react'
-// var funccount = new Set();
-// const App = () => {
-
-
-//     const [count, setCount] = useState(0)
-//     const [number, setNumber] = useState(0)
-
-
-
-//     const incrementCounter = useCallback(() => {
-//         setCount(count + 1)
-//     }, [count])
-//     const decrementCounter = useCallback(() => {
-//         setCount(count - 1)
-//     }, [count])
-
-
-
-//     const incrementNumber = useCallback(() => {
-//         setNumber(number + 1)
-//     }, [number])
-
-//     funccount.add(incrementCounter);
-//     funccount.add(decrementCounter);
-//     funccount.add(incrementNumber);
-//     console.log(funccount.size);
-
-//     return (
-//         <div>
-//             Count: {count}
-//             <button onClick={incrementCounter}>
-//                 Increase counter
-//             </button>
-//             <button onClick={decrementCounter}>
-//                 Decrease Counter
-//             </button>
-//             <button onClick={incrementNumber}>
-//                 increase number
-//             </button>
-//         </div>
-//     )
-// }
-
-
-// export default App;
-
-
-
-// import React, { useState, useMemo } from 'react';
-
-// function MyComponent() {
-//     const [count, setCount] = useState(0);
-//     const [value, setValue] = useState('');
-
-//     const expensiveValue = useMemo(() => {
-//         console.log('Computing expensive value...');
-//         let result = '';
-//         for (let i = 0; i < count; i++) {
-//             // result += value;
-//             result = result + value;
-//         }
-//         return result;
-//     }, [count, value]);
-
-//     function handleCountChange(event) {
-//         setCount(Number(event.target.value));
-//     }
-
-//     function handleValueChange(event) {
-//         setValue(event.target.value);
-//     }
-
-//     return (
-//         <div>
-//             <div>
-//                 <label>Count: </label>
-//                 <input type="number" value={count} onChange={handleCountChange} />
-//             </div>
-//             <div>
-//                 <label>Value: </label>
-//                 <input type="text" value={value} onChange={handleValueChange} />
-//             </div>
-//             <div>
-//                 <label>Expensive Value: </label>
-//                 {expensiveValue}
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default MyComponent;

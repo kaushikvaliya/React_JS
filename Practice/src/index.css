@@ -1,13 +1,43 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.kaushik {
+  background-color: #61dafb;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  /* max-width: 1000px; */
+}
+
+.se_1_bg {
+  background-image: url(../public/img/Samsung-Galaxy-Unpacked-2022-All-Products.jpg);
+  height: 90.1vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: antiquewhite;
+  background-blend-mode: multiply;
+}
+
+.home_text h1 {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 5rem;
+  color: blueviolet;
+}
+
+
+.kaushik-light {
+  color: #222;
+  background: #fff;
+}
+
+.kaushik-dark {
+  color: #fff;
+  background: rgb(23, 32, 42);
 }
