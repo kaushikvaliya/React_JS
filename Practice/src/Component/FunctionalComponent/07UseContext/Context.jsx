@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { createContext } from "react";
-const DarkModeContext = createContext();
+export const DarkModeContext = createContext();
 const DarkModeProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState("light");
+    console.log(children);
     return (
         <>
             <DarkModeContext.Provider value={[darkMode]}>
-                {children}
 
-                <label>
+                {children}
+                {JSON.stringify(darkMode)}
+                <div className="wrapper">
                     <input
                         type="checkbox"
                         checked={darkMode === 'dark'}
@@ -16,8 +18,15 @@ const DarkModeProvider = ({ children }) => {
                             setDarkMode(e.target.checked ? 'dark' : 'light')
                         }}
                     />
-                    Use dark mode
-                </label>
+                    <p>Use dark mode</p>
+                </div>
+
+
+
+                {/* <div class="wrapper">
+                    <input type="checkbox" />
+                </div> */}
+
             </DarkModeContext.Provider >
 
         </>
@@ -25,11 +34,6 @@ const DarkModeProvider = ({ children }) => {
 };
 
 export default DarkModeProvider;
-
-export { DarkModeContext }
-
-
-
 
 {/* {!darkMode ? (
 //                 <i style={{

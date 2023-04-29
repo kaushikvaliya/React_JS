@@ -6,7 +6,9 @@ import FunctionalCompoState from './02FunctionalCompoState.jsx';
 import FunctionalCompoUseEffect from './03FunctionalCompoUseEffect.jsx';
 import FunctionalCompoUseEffectExample from './3.1FunctionalCompoUseEffectExample.jsx';
 import FunctionalCompouseCallback from './04FunctionalCompouseCallback.jsx';
+import FunctionalCompoUseMemo from './06FunctionalCompoUseMemo.jsx';
 import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.jsx';
+import UseContext from './08FunctionalCompoUseContext.jsx';
 
 
 const FunctionalCompoRoute = () => {
@@ -18,7 +20,9 @@ const FunctionalCompoRoute = () => {
                 <Route path="functionalcompouseeffect" element={<FunctionalCompoUseEffect />} />
                 <Route path="functionalcompouseeffectexample" element={<FunctionalCompoUseEffectExample />} />
                 <Route path="functionalfompousefallback" element={<FunctionalCompouseCallback />} />
+                <Route path="functionalfompousememo" element={<FunctionalCompoUseMemo />} />
                 <Route path="functionalfompousecontext" element={<FunctionalCompoUseContext />} />
+                <Route path="usecontext" element={<UseContext />} />
             </Route>
         </Routes>
     );

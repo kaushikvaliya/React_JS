@@ -1,11 +1,13 @@
+import React from 'react';
 import DarkModeProvider from "./Context";
 import Forem from "./forem";
-function App() {
+
+const FunctionalCompoUseContext = () => {
     return (
         <DarkModeProvider>
             <Forem></Forem>
         </DarkModeProvider>
     );
-}
+};
 
-export default App;
+export default FunctionalCompoUseContext;

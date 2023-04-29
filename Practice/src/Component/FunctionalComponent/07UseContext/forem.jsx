@@ -1,20 +1,17 @@
 import React from 'react';
 import { useContext } from "react";
 import { DarkModeContext } from "./Context";
-
 const Forem = () => {
     const darkMode = useContext(DarkModeContext);
-    const className = 'kaushik-' + darkMode;
-    console.log(className);
+    const className = 'kaushik-' + darkMode; // eslint-disable  no-undef  --     
+
+    // console.log(className);
     return (
-        <>
-
-            {/* <section style={{ backgroundColor: darkMode ? "#000" : "#fff" }}> */}
-            <section className={className}>
-
+        <div className={className}>
+            <section className='py-5'>
                 <main>
                     <h2>
-                        Get the <span>right job</span> you deserve
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     </h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
@@ -26,8 +23,8 @@ const Forem = () => {
                     <input type="text" />
                     <button type="submit">submit</button>
                 </form>
-            </section>
-        </>
+            </section >
+        </div>
     );
 };
 
