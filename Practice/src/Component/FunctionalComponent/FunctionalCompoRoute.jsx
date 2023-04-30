@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './Navbar/Navbar.jsx';
 import FunctionalCompoMenu from './FunctionalCompoMenu.jsx';
 import WelcomeToFunctional from './WelcomeToFunctionalCompo.jsx';
 import FunctionalCompoState from './02FunctionalCompoState.jsx';
@@ -9,12 +10,15 @@ import FunctionalCompouseCallback from './04FunctionalCompouseCallback.jsx';
 import FunctionalCompoUseMemo from './06FunctionalCompoUseMemo.jsx';
 import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.jsx';
 import UseContext from './08FunctionalCompoUseContext.jsx';
+import FunctionalCompoUseReducer from './09FunctionalCompoUseReducer.jsx';
 
 
 const FunctionalCompoRoute = () => {
     return (
         <Routes>
             <Route path="/" element={<FunctionalCompoMenu />} >
+                <Route path="usecontext" element={<UseContext />} />
+                <Route path="navbar" element={<Navbar />} />
                 <Route path="functionalcompointro" element={<WelcomeToFunctional />} />
                 <Route path="functionalcompostate" element={<FunctionalCompoState />} />
                 <Route path="functionalcompouseeffect" element={<FunctionalCompoUseEffect />} />
@@ -23,6 +27,7 @@ const FunctionalCompoRoute = () => {
                 <Route path="functionalfompousememo" element={<FunctionalCompoUseMemo />} />
                 <Route path="functionalfompousecontext" element={<FunctionalCompoUseContext />} />
                 <Route path="usecontext" element={<UseContext />} />
+                <Route path="functionalcompouusereducer" element={<FunctionalCompoUseReducer />} />
             </Route>
         </Routes>
     );

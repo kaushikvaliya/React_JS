@@ -1,12 +1,19 @@
+:root {
+  --black: #000;
+  --Ghost_White: #EFF2FB;
+  --white: #FFFF;
+  --cornflower_Blue: #537fe7;
+  --Periwinkle_Blue: #c3d4d663;
+  --Pale_Blue: #CAE4F9;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.kaushik {
-  background-color: #61dafb;
-}
+
 
 .container {
   max-width: 1300px;
@@ -58,7 +65,21 @@
   display: flex;
 }
 
+.btn_wrapper {
+  display: flex;
+  justify-content: center;
+}
 
+.btn_wrapper button {
+  display: inline-block;
+  margin: 0 20px;
+
+}
+
+.box {
+  margin: 50px 0;
+  text-align: center;
+}
 
 input[type="checkbox"] {
   appearance: none;
@@ -102,4 +123,238 @@ input[type="checkbox"]:checked:before {
 
 input[type="checkbox"]:checked:after {
   left: calc(100% - 37px);
+}
+
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class*=col_] {
+  width: 100%;
+}
+
+.col_12 {
+  width: 100%;
+}
+
+.justify_space_between {
+  justify-content: space-between;
+}
+
+.align_item_center {
+  align-items: center;
+}
+
+/* ----------- header start ---------- */
+
+
+/* ----------- header start ---------- */
+section {
+  height: 100vh;
+}
+
+/* header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  border-bottom: 1px solid hsla(0, 0%, 84%, .7);
+  background-color: var(--Ghost_White);
+} */
+
+
+
+header.headeractive {
+  /* position: fixed; */
+  backdrop-filter: blur(10px);
+  background-color: transparent;
+  border-bottom: 1px solid var(--cornflower_Blue);
+
+}
+
+.logo img {
+  width: 90px;
+  display: block;
+}
+
+
+.header_text ul li {
+  display: inline-block;
+  position: relative;
+}
+
+.header_text ul li a {
+  display: block;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var(--black);
+  font-family: "Whyte_Regular";
+  transition: 0.2s ease-in-out;
+  padding: 15px 0px;
+}
+
+.header_text ul li a:hover {
+  color: var(--cornflower_Blue);
+}
+
+.header_text {
+  position: fixed;
+  display: block;
+  top: 92px;
+  right: -100%;
+  width: 100%;
+  padding-block: 3rem 2rem;
+  transition: all 0.40s ease-in-out;
+  transition: all .9s;
+  z-index: 999;
+  height: 100vh;
+  background-color: var(--Periwinkle_Blue);
+  background-color: #dae4eddd;
+  backdrop-filter: blur(14px);
+}
+
+.header_text.active {
+  opacity: 1;
+  right: 0;
+  width: 100%;
+  overflow: scroll;
+}
+
+.header_text ul li {
+  display: block;
+  width: 90%;
+  list-style: none;
+  margin: 0 auto;
+  padding: 19px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+.dot_active {
+  color: var(--cornflower_Blue) !important;
+}
+
+.dot_active::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: var(--cornflower_Blue);
+  left: 50%;
+  top: 70px;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.bar_col {
+  display: block;
+}
+
+.bar {
+  display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+}
+
+.bar i {
+  font-size: 30px;
+  color: var(--cornflower_Blue);
+}
+
+/* ----------- header end ---------- */
+.col_20 {
+  width: 100%;
+  border: 1px solid var(--cornflower_Blue);
+}
+
+
+
+
+/* ----------- media query start ---------- */
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+
+
+@media (min-width: 992px) {
+
+
+  .container {
+    width: 960px;
+  }
+
+  .bar_col,
+  .bar {
+    display: none;
+  }
+
+  .dot_active::after {
+    top: 70px;
+  }
+
+  .header_text ul li {
+    display: inline-block;
+    padding: 0;
+    font-size: 1rem;
+    width: auto;
+    margin: 0;
+  }
+
+  .header_text {
+    height: auto;
+    position: static;
+    padding: 0px 0;
+    background: none;
+    transition: none;
+    backdrop-filter: blur(0px);
+  }
+
+  .header_text ul li a {
+    padding: 35px 17px;
+  }
+
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
 }
