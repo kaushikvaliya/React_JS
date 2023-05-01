@@ -52,3 +52,50 @@ export default FunctionalCompoRoute;
 
 
 // <div className={`app-container ${theme}`}>
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from 'react';
+
+// function Navbar() {
+//   const [activeLink, setActiveLink] = useState(null);
+//   const handleLinkClick = (link) => {
+//     setActiveLink(link);
+//   };
+//   const links = [
+//     { label: 'Home', href: '#' },
+//     { label: 'About', href: '#' },
+//     { label: 'Contact', href: '#' },
+//   ];
+//   return (
+//     <div className="header">
+//       <div className="header_text">
+//         <ul>
+//           {links.map((link, index) => (
+//             <li key={index}>
+//               <a
+//                 href={link.href}
+//                 onClick={(event) => {
+//                   event.preventDefault();
+//                   handleLinkClick(index);
+//                 }}
+//                 className={activeLink === index ? 'dot_active' : ''}
+//               >
+//                 {link.label}
+//               </a>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </div>
+//   );
+// }

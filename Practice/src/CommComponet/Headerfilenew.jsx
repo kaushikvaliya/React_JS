@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
     MDBContainer,
     MDBNavbar,
@@ -22,7 +22,13 @@ class headern extends Component {
         const mapdata = data.map(({ key, value }, index) => {
             return (
                 <MDBNavbarItem key={index}>
-                    <Link className='nav-link' to={key} >{value} </Link>
+                    <MDBNavbarItem className='nav-link' key={index}>
+                        <NavLink
+                            to={key}
+                            className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active_link" : ""} >
+                            {value}
+                        </NavLink>
+                    </MDBNavbarItem>
                 </MDBNavbarItem>
             )
         })

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import {
     MDBNavbar,
@@ -33,13 +33,15 @@ const Headerfile = () => {
                     <MDBCollapse show={showNavColor} navbar>
                         <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
                             <MDBNavbarItem className='active'>
-                                <Link className='nav-link' to="/">Home</Link>
+                                <NavLink className='nav-link' to="/">Home</NavLink>
                                 {/* <MDBNavbarLink aria-current='page' href='#'>
                                     Home
                                 </MDBNavbarLink> */}
                             </MDBNavbarItem>
                             <MDBNavbarItem>
-                                <Link className='nav-link' to="/Features">Features</Link>
+
+
+                                <Link activeClassName='is-active' to="/Features">Features</Link>
                                 {/* <MDBNavbarLink href='#'>Features</MDBNavbarLink> */}
                             </MDBNavbarItem>
                             <MDBNavbarItem>

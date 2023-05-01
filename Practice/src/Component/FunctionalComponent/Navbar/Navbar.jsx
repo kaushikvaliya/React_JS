@@ -7,7 +7,6 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-
     const handleScroll = () => {
         if (window.scrollY > 20) {
             setIsMenuOpen(false);
@@ -18,8 +17,6 @@ const Navbar = () => {
         }
     };
     window.addEventListener('scroll', handleScroll);
-
-
 
     return (
         <>
@@ -51,7 +48,7 @@ const Navbar = () => {
                 </div>
             </header>
 
-            <section>
+            <section style={{ height: '100vh' }}>
                 <div className="container">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora a sint placeat sit hic, mollitia magni laborum dignissimos officiis. Deleniti repudiandae perspiciatis temporibus distinctio aperiam, odit quaerat dolores sapiente aliquid.</p>
                 </div>
@@ -63,39 +60,3 @@ const Navbar = () => {
 export default Navbar;
 
 
-
-// import { useState } from 'react';
-
-// function Navbar() {
-//   const [activeLink, setActiveLink] = useState(null);
-//   const handleLinkClick = (link) => {
-//     setActiveLink(link);
-//   };
-//   const links = [
-//     { label: 'Home', href: '#' },
-//     { label: 'About', href: '#' },
-//     { label: 'Contact', href: '#' },
-//   ];
-//   return (
-//     <div className="header">
-//       <div className="header_text">
-//         <ul>
-//           {links.map((link, index) => (
-//             <li key={index}>
-//               <a
-//                 href={link.href}
-//                 onClick={(event) => {
-//                   event.preventDefault();
-//                   handleLinkClick(index);
-//                 }}
-//                 className={activeLink === index ? 'dot_active' : ''}
-//               >
-//                 {link.label}
-//               </a>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }
