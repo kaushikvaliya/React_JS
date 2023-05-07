@@ -11,6 +11,7 @@ import FunctionalCompoUseMemo from './06FunctionalCompoUseMemo.jsx';
 import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.jsx';
 import UseContext from './08FunctionalCompoUseContext.jsx';
 import FunctionalCompoUseReducer from './09FunctionalCompoUseReducer.jsx';
+import FunctionalCompoTodolist from './Todolist.jsx';
 
 
 const FunctionalCompoRoute = () => {
@@ -28,6 +29,7 @@ const FunctionalCompoRoute = () => {
                 <Route path="functionalfompousecontext" element={<FunctionalCompoUseContext />} />
                 <Route path="usecontext" element={<UseContext />} />
                 <Route path="functionalcompouusereducer" element={<FunctionalCompoUseReducer />} />
+                <Route path="functionalcompotodolist" element={<FunctionalCompoTodolist />} />
             </Route>
         </Routes>
     );

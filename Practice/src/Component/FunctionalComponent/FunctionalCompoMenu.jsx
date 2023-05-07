@@ -6,7 +6,7 @@ const FunctionalCompoMenu = () => {
             <div className="row">
                 <div className="col-6 offset-6">
                     <ul className='mt-3' style={{ width: "70%", margin: "0 auto" }}>
-                         <li className='h4 text-capitalize'><Link to="navbar">Functional Compo Navbar</Link></li>
+                        <li className='h4 text-capitalize'><Link to="navbar">Functional Compo Navbar</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompointro">Functional Compo Intro</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompostate">Functional Compo useState</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompouseeffect">Functional Compo UseEffect</Link></li>
@@ -16,6 +16,7 @@ const FunctionalCompoMenu = () => {
                         <li className='h4 text-capitalize'><Link to="usecontext">Functional Compo UseContext</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalfompousecontext">Functional Compo UseContext</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompouusereducer">FunctionalCompoUseReducer</Link></li>
+                        <li className='h4 text-capitalize'><Link to="functionalcompotodolist">FunctionalCompoTodolist</Link></li>
                     </ul>
 
                 </div>
