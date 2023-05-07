@@ -74,10 +74,7 @@ const FunctionalCompoUseMemo = () => {
 
     return (
         <>
-
-            {multiplication} <br />
-
-
+            <p>multiplication {multiplication}</p>
             <button onClick={addition}>Addition</button> <span>{add}</span>  <br />
             <button onClick={subtraction}>substration</button> <span>{sub}</span>
 

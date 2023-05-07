@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { createContext } from "react";
 export const DarkModeContext = createContext();
+
+
 const DarkModeProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState("light");
     console.log(children);
     return (
         <>
             <DarkModeContext.Provider value={[darkMode]}>
-
                 {children}
                 {JSON.stringify(darkMode)}
                 <div className="wrapper">
@@ -20,8 +21,6 @@ const DarkModeProvider = ({ children }) => {
                     />
                     <p>Use dark mode</p>
                 </div>
-
-
 
                 {/* <div class="wrapper">
                     <input type="checkbox" />

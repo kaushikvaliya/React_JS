@@ -1,8 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-
-
-
 const ThemeContext = createContext(null);
 const FunctionalCompoUseContext = () => {
     const [theme, setTheme] = useState('light');

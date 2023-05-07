@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./Context";
 const Forem = () => {
     const darkMode = useContext(DarkModeContext);
-    const className = 'kaushik-' + darkMode; // eslint-disable  no-undef  --     
+    const className = 'kaushik-' + darkMode;
 
     // console.log(className);
     return (
