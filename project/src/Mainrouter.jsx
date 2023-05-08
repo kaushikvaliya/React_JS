@@ -5,6 +5,7 @@ import Homepage from './Pages/Homepage.jsx';
 import Aboutpage from './Pages/Aboutpage.jsx';
 import ContactPage from './Pages/ContactPage.jsx';
 import ServicesPage from './Pages/ServicesPage.jsx';
+import LoginRegistration from './Components/LoginRegistration.jsx';
 
 const Mainrouter = createBrowserRouter([
     {
@@ -37,6 +38,15 @@ const Mainrouter = createBrowserRouter([
             <>
                 <HeaderComponent />
                 <ServicesPage />
+            </>
+
+    },
+    {
+        path: "/loginregistration",
+        element:
+            <>
+                <LoginRegistration />
+
             </>
 
     }
