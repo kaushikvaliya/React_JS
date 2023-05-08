@@ -20,32 +20,34 @@ const FunctionalCompoUseReducer = () => {
 
     return (
         <>
-
-            <form >
-                <input
-                    type="text"
-                    value={data}
-                    placeholder="Enter a title for this task…"
-                    onChange={e => setValue(e.target.value)}
-                />
-                <button onClick={handleSubmit} type="submit">submit</button>
-            </form>
-
-
-            <div>
-                {tasks.map((taskvalue, index) => (
-
-                    <div key={index} >
-                        <span key={index} >
-                            {JSON.stringify(taskvalue.data)} <br />
-                            {taskvalue.data}
-                        </span>
-                        <button onClick={() => removeTask(index)}>delet</button>
-                    </div>
-                ))}
+            <div style={{ margin: "50px 0" }}>
+                <form >
+                    <input
+                        type="text"
+                        value={data}
+                        placeholder="Enter a title for this task…"
+                        onChange={e => setValue(e.target.value)}
+                    />
+                    <button onClick={handleSubmit} type="submit">submit</button>
+                </form>
 
 
+                <div>
+                    {tasks.map((taskvalue, index) => (
+
+                        <div key={index} >
+                            <span key={index} >
+                                {/* {JSON.stringify(taskvalue.data)} <br /> */}
+                                {taskvalue.data}
+                            </span>
+                            <button onClick={() => removeTask(index)}>delet</button>
+                        </div>
+                    ))}
+
+
+                </div>
             </div>
+
 
         </>
     );
