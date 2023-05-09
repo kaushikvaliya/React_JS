@@ -1,59 +1,195 @@
 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
-const FunctionalCompoUseReducer = () => {
+// const FunctionalCompoUseReducer = () => {
 
-    const [data, setValue] = useState("");
-    const [tasks, setTasks] = useState([]);
-    const handleSubmit = e => {
-        e.preventDefault();
-        // addTask(data)
-        setTasks([...tasks, { data }])
-        setValue("");
-    };
+//     const [data, setValue] = useState("");
+//     const [tasks, setTasks] = useState([]);
+//     const handleSubmit = e => {
+//         e.preventDefault();
+//         // addTask(data)
+//         setTasks([...tasks, { data }])
+//         setValue("");
+//     };
 
-    const removeTask = index => {
-        const newTasks = [...tasks];
-        newTasks.splice(index, 1);
-        setTasks(newTasks);
-    };
+//     const removeTask = index => {
+//         const newTasks = [...tasks];
+//         newTasks.splice(index, 1);
+//         setTasks(newTasks);
+//     };
+
+//     return (
+//         <>
+//             <div style={{ margin: "50px 0" }}>
+//                 <form >
+//                     <input
+//                         type="text"
+//                         value={data}
+//                         placeholder="Enter a title for this task…"
+//                         onChange={e => setValue(e.target.value)}
+//                     />
+//                     <button onClick={handleSubmit} type="submit">submit</button>
+//                 </form>
+
+
+//                 <div>
+//                     {tasks.map((taskvalue, index) => (
+
+//                         <div key={index} >
+//                             <span key={index} >
+//                                 {/* {JSON.stringify(taskvalue.data)} <br /> */}
+//                                 {taskvalue.data}
+//                             </span>
+//                             <button onClick={() => removeTask(index)}>delet</button>
+//                         </div>
+//                     ))}
+
+
+//                 </div>
+//             </div>
+
+
+//         </>
+//     );
+// };
+
+// export default FunctionalCompoUseReducer;
+
+
+import React, { useState, useEffect } from 'react';
+
+const FetchAPI = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result);
+                setData(result);
+            });
+    }, []);
+
+    let fechdata = data.map((val, index) => {
+        return (
+            <tr style={{ border: '1px solid black' }} key={index}>
+                <td style={{ border: '1px solid black', padding: "10px" }} >{val.id}</td>
+                <td style={{ border: '1px solid black', textAlign: "center", padding: "10px" }}>{val.userId}</td>
+                <td style={{ border: '1px solid black', padding: " 0 10px" }}>{val.title}</td>
+                <td style={{ border: '1px solid black', textAlign: "center" }}>{JSON.stringify(val.completed)}</td>
+            </tr>
+        );
+    });
 
     return (
-        <>
-            <div style={{ margin: "50px 0" }}>
-                <form >
-                    <input
-                        type="text"
-                        value={data}
-                        placeholder="Enter a title for this task…"
-                        onChange={e => setValue(e.target.value)}
-                    />
-                    <button onClick={handleSubmit} type="submit">submit</button>
-                </form>
-
-
-                <div>
-                    {tasks.map((taskvalue, index) => (
-
-                        <div key={index} >
-                            <span key={index} >
-                                {/* {JSON.stringify(taskvalue.data)} <br /> */}
-                                {taskvalue.data}
-                            </span>
-                            <button onClick={() => removeTask(index)}>delet</button>
-                        </div>
-                    ))}
-
-
-                </div>
-            </div>
-
-
-        </>
+        <div>
+            <table style={{ border: '1px solid black', width: "100%" }}>
+                {fechdata}
+            </table>
+        </div>
     );
 };
 
-export default FunctionalCompoUseReducer;
+export default FetchAPI;
+
+
+
+
+
+
+// import React, { useState } from 'react';
+
+// const FunctionalCompoUseReducer = () => {
+
+//     const [data, setData] = useState("");
+//     const [tasks, setTasks] = useState([]);
+//     const [editing, setEditing] = useState(false);
+//     const [editIndex, setEditIndex] = useState(null);
+//     const [editValue, setEditValue] = useState("");
+
+//     const handleSubmit = e => {
+//         e.preventDefault();
+//         if (!editing) {
+//             setTasks([...tasks, { data }]);
+//             setData("");
+//         } else {
+//             const newTasks = [...tasks];
+//             newTasks[editIndex].data = editValue;
+//             setTasks(newTasks);
+//             setEditing(false);
+//             setEditIndex(null);
+//             setEditValue("");
+//         }
+//     };
+
+//     const removeTask = index => {
+//         const newTasks = [...tasks];
+//         newTasks.splice(index, 1);
+//         setTasks(newTasks);
+//     };
+
+//     const handleEdit = index => {
+//         setEditing(true);
+//         setEditIndex(index);
+//         setEditValue(tasks[index].data);
+//     }
+
+//     return (
+//         <>
+//             <div style={{ margin: "50px 0" }}>
+//                 <form >
+//                     <input
+//                         type="text"
+//                         value={editing ? editValue : data}
+//                         placeholder="Enter a title for this task…"
+//                         onChange={e => {
+//                             if (editing) {
+//                                 setEditValue(e.target.value)
+//                             } else {
+//                                 setData(e.target.value)
+//                             }
+//                         }}
+//                     />
+//                     <button onClick={handleSubmit} type="submit">{editing ? "Save" : "Add"}</button>
+//                 </form>
+
+
+//                 <div>
+//                     {tasks.map((taskvalue, index) => (
+
+//                         <div key={index} >
+//                             <span key={index} >
+//                                 {taskvalue.data}
+//                             </span>
+//                             <button onClick={() => removeTask(index)}>Delete</button>
+//                             <button onClick={() => handleEdit(index)}>Edit</button>
+//                         </div>
+//                     ))}
+
+
+//                 </div>
+//             </div>
+
+
+//         </>
+//     );
+// };
+
+// export default FunctionalCompoUseReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import React, { useState } from "react";

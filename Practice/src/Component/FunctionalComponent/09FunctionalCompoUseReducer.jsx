@@ -1,50 +1,50 @@
-// import React, { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
-// const FunctionalCompoUseReducer = () => {
+const FunctionalCompoUseReducer = () => {
 
 
-//     const initialState = 0;
+    const initialState = 0;
 
-//     const reducer = (initialState, action) => {
-//         switch (action) {
-//             case "increment":
-//                 return initialState + 1;
-//             case "decrement":
-//                 return initialState - 1;
-//             case "reset":
-//                 return 0;
-//             default:
-//                 throw new Error("Unexpected action");
-//         }
-//     };
-//     const [count, dispatch] = useReducer(reducer, initialState);
-//     return (
-//         <>
+    const reducer = (initialState, action) => {
+        switch (action) {
+            case "increment":
+                return initialState + 1;
+            case "decrement":
+                return initialState - 1;
+            case "reset":
+                return 0;
+            default:
+                throw new Error("Unexpected action");
+        }
+    };
+    const [count, dispatch] = useReducer(reducer, initialState);
+    return (
+        <>
 
-//             <div className="box">
-//                 <h4>{count}</h4>
+            <div className="box">
+                <h4>{count}</h4>
 
-//                 <div className="btn_wrapper">
+                <div className="btn_wrapper">
 
-//                     <button className='btn' onClick={() => dispatch("increment")}>
-//                         increment
-//                     </button>
+                    <button className='btn' onClick={() => dispatch("increment")}>
+                        increment
+                    </button>
 
-//                     <button className='btn' onClick={() => dispatch("decrement")}>
-//                         decrement
-//                     </button>
+                    <button className='btn' onClick={() => dispatch("decrement")}>
+                        decrement
+                    </button>
 
-//                     <button className='btn' onClick={() => dispatch("reset")}>
-//                         reset
-//                     </button>
-//                 </div>
-//             </div>
+                    <button className='btn' onClick={() => dispatch("reset")}>
+                        reset
+                    </button>
+                </div>
+            </div>
 
-//         </>
-//     );
-// };
+        </>
+    );
+};
 
-// export default FunctionalCompoUseReducer;
+export default FunctionalCompoUseReducer;
 
 
 

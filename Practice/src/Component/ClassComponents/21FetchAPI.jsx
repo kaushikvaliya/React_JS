@@ -9,6 +9,7 @@ class FetchAPI extends Component {
         }
         fetch("https://jsonplaceholder.typicode.com/todos").then((response) => response.json()).then((result) => {
             console.log(result);
+
             this.setState({
                 data: result
             })
