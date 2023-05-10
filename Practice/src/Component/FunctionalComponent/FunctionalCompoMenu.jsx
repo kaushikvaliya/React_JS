@@ -9,6 +9,8 @@ const FunctionalCompoMenu = () => {
                         <li className='h4 text-capitalize'><Link to="navbar">Functional Compo Navbar</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompointro">Functional Compo Intro</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompostate">Functional Compo useState</Link></li>
+                        <li className='h4 text-capitalize'><Link to="functionalcompostateuseStatewithobject">Functional Compo useState with Object </Link></li>
+                        <li className='h4 text-capitalize'><Link to="functionalcompostateuseStatewitharray">Functional Compo useState with Array </Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompouseeffect">Functional Compo UseEffect</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalcompouseeffectexample">Functional Compo UseEffect Example</Link></li>
                         <li className='h4 text-capitalize'><Link to="functionalfompousefallback">Functional Compo useCallback</Link></li>

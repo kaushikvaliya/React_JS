@@ -4,6 +4,8 @@ import Navbar from './Navbar/Navbar.jsx';
 import FunctionalCompoMenu from './FunctionalCompoMenu.jsx';
 import WelcomeToFunctional from './WelcomeToFunctionalCompo.jsx';
 import FunctionalCompoState from './02FunctionalCompoState.jsx';
+import FunctionalCompostateuseStatewithobject from './FunctionalCompostateuseStatewithobject.jsx';
+import FunctionalCompostateuseStatewithArray from './FunctionalCompostateuseStatewithArray.jsx';
 import FunctionalCompoUseEffect from './03FunctionalCompoUseEffect.jsx';
 import FunctionalCompoUseEffectExample from './3.1FunctionalCompoUseEffectExample.jsx';
 import FunctionalCompouseCallback from './04FunctionalCompouseCallback.jsx';
@@ -22,6 +24,8 @@ const FunctionalCompoRoute = () => {
                 <Route path="navbar" element={<Navbar />} />
                 <Route path="functionalcompointro" element={<WelcomeToFunctional />} />
                 <Route path="functionalcompostate" element={<FunctionalCompoState />} />
+                <Route path="functionalcompostateuseStatewithobject" element={<FunctionalCompostateuseStatewithobject />} />
+                <Route path="functionalcompostateuseStatewitharray" element={<FunctionalCompostateuseStatewithArray />} />
                 <Route path="functionalcompouseeffect" element={<FunctionalCompoUseEffect />} />
                 <Route path="functionalcompouseeffectexample" element={<FunctionalCompoUseEffectExample />} />
                 <Route path="functionalfompousefallback" element={<FunctionalCompouseCallback />} />
