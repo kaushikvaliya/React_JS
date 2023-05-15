@@ -6,6 +6,7 @@ import Aboutpage from './Pages/Aboutpage.jsx';
 import ContactPage from './Pages/ContactPage.jsx';
 import ServicesPage from './Pages/ServicesPage.jsx';
 import LoginRegistration from './Components/LoginRegistration.jsx';
+import FetchAPI from './Components/FetchAPI';
 
 const Mainrouter = createBrowserRouter([
     {
@@ -46,7 +47,14 @@ const Mainrouter = createBrowserRouter([
         element:
             <>
                 <LoginRegistration />
+            </>
 
+    },
+    {
+        path: "/fetchapi",
+        element:
+            <>
+                <FetchAPI />
             </>
 
     }

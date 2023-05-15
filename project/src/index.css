@@ -15,7 +15,7 @@ input {
     position: relative;
     width: 100%;
     background-color: #fff;
-    min-height: 600px;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -44,7 +44,7 @@ input {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0rem 5rem;
+    padding: 0rem 1rem;
     transition: all 0.2s 0.7s;
     overflow: hidden;
     grid-column: 1 / 2;
@@ -79,6 +79,7 @@ form.sign-in-form {
     position: relative;
 }
 
+
 .input-field i {
     text-align: center;
     line-height: 55px;
@@ -93,7 +94,7 @@ form.sign-in-form {
     border: none;
     line-height: 1;
     font-weight: 600;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     color: #333;
 }
 

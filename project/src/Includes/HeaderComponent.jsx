@@ -53,6 +53,10 @@ const FunctionCompoDynamicSubMenu = () => {
             title: 'LoginRegistration',
             url: `/loginregistration`,
         },
+        {
+            title: 'FetchAPI',
+            url: `/fetchapi`,
+        },
 
     ];
 
