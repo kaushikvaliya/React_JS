@@ -1,164 +1,125 @@
-// import React from 'react';
-// import { useState } from 'react';
-
-// const CustomHook = (intval, initError) => {
-//     // const elements = document.querySelectorAll('.thisrequired');
-
-//     const [inp, setInput] = useState(intval)
-//     const [errors, setError] = useState(initError)
-
-//     const handleChange = (e) => {
-
-//         setInput((inp) => ({ ...inp, [e.target.name]: e.target.value }));
-
-//         const errorKey = e.target.name;
-//         const errorMessage = `${e.target.name} is required`;
-//         const errorContainer = e.target.nextElementSibling;
-
-//         if (e.target.className === "thisrequired") {
-//             console.log("error");
-
-//             if (e.target.value === "") {
-//                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: errorMessage }));
-//                 console.log({ [errorKey]: errorMessage });
-
-
-//                 if (!errorContainer || errorContainer.nodeName !== 'SPAN') {
-//                     const errorSpan = document.createElement('span');
-//                     errorSpan.textContent = errorMessage;
-//                     e.target.insertAdjacentElement('afterend', errorSpan);
-//                 }
-//             } else {
-//                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: "" }));
-//                 if (errorContainer && errorContainer.nodeName === 'SPAN') {
-//                     errorContainer.remove();
-//                 }
-//             }
-//         }
-//     }
-//     return { handleChange, inp, errors }
-// };
-
-// export default CustomHook;
-
-
-
-
-
-
 import React from 'react';
+import { useState } from 'react';
 
-const UseCustomHook = () => {
+const CustomHook = (intval, initError) => {
 
+    const [inp, setInput] = useState(intval)
+    const [errors, setError] = useState(initError)
 
-    React.useEffect(() => {
-        const elements = document.querySelectorAll('.thisrequired');
-        elements.forEach((element) => {
-            element.addEventListener('blur', handleBlur);
-        });
+    const handleChange = (e) => {
 
-        // return () => {
-        //     elements.forEach((element) => {
-        //         element.removeEventListener('blur', handleBlur);
-        //     });
-        // };
-    }, []);
+        setInput((inp) => ({ ...inp, [e.target.name]: e.target.value }));
 
-    const handleBlur = (event) => {
-        const element = event.target;
-        console.log(element);
+        const errorKey = e.target.name;
+        const errorMessage = `${e.target.name} is required`;
+        console.log(errorMessage);
+        const errorContainer = e.target.nextElementSibling;
 
-        // console.log(event);
-        const val = element.getAttribute('name');
-        const arroe = val + '&nbsp;' + 'required';
-        const txt = document.createElement('span');
-        txt.style.textTransform = 'capitalize';
-        txt.innerHTML = arroe;
-        const validationMsg = element.nextSibling;
+        if (e.target.className === "thisrequired") {
+            console.log("error");
 
-        if (element.value === '') {
-            if (!validationMsg || validationMsg.nodeName !== 'SPAN') {
-                element.insertAdjacentElement('afterend', txt);
-            }
-        } else {
-            if (validationMsg && validationMsg.nodeName === 'SPAN') {
-                validationMsg.remove();
-            }
-        }
+            if (e.target.value === "") {
+                setError((prevErrors) => ({ ...prevErrors, [errorKey]: errorMessage }));
+                console.log({ [errorKey]: errorMessage });
 
 
-        const node = event.target.getAttribute('type');
-        // const emailValue = ;
-        if (node === 'email') {
-            const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-            if (emailRegex.test(event.target.value.trim())) {
-                event.target.style.color = 'green';
-
+                if (!errorContainer || errorContainer.nodeName !== 'SPAN') {
+                    const errorSpan = document.createElement('span');
+                    errorSpan.style.width = '200px';
+                    errorSpan.textContent = errorMessage;
+                    e.target.insertAdjacentElement('afterend', errorSpan);
+                }
             } else {
-                event.target.style.color = 'red';
-                element.insertAdjacentElement('afterend', txt);
-                // console.log('Invalid email'); // Add this line
+                setError((prevErrors) => ({ ...prevErrors, [errorKey]: "" }));
+                if (errorContainer && errorContainer.nodeName === 'SPAN') {
+                    errorContainer.remove();
+                }
             }
         }
-
-    };
-
-
-
-
-
-    return { handleBlur };
+    }
+    return { handleChange, inp, errors }
 };
 
-export default UseCustomHook;
+export default CustomHook;
 
 
 
 
 
 
+// import React from 'react';
+
+// const UseCustomHook = () => {
 
 
-// import React, { useState, useEffect } from 'react';
-
-// const CustomHook = (intval, initError) => {
-//     const [inp, setInput] = useState(intval);
-//     const [errors, setError] = useState(initError);
-
-//     useEffect(() => {
+//     React.useEffect(() => {
 //         const elements = document.querySelectorAll('.thisrequired');
-
-//         const handleBlur = (event) => {
-//             const fieldName = event.target.name;
-//             const errorKey = `${fieldName}Error`;
-
-//             if (event.target.value === '') {
-//                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: `${fieldName} is required` }));
-//             } else {
-//                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: '' }));
-//             }
-//         };
-
 //         elements.forEach((element) => {
 //             element.addEventListener('blur', handleBlur);
 //         });
 
-//         return () => {
-//             elements.forEach((element) => {
-//                 element.removeEventListener('blur', handleBlur);
-//             });
-//         };
+//         // return () => {
+//         //     elements.forEach((element) => {
+//         //         element.removeEventListener('blur', handleBlur);
+//         //     });
+//         // };
 //     }, []);
 
-//     const handleChange = (event) => {
-//         setInput((prevInp) => ({ ...prevInp, [event.target.name]: event.target.value }));
+//     const handleBlur = (event) => {
+//         const element = event.target;
+//         console.log(element);
+
+//         // console.log(event);
+//         const val = element.getAttribute('name');
+//         const arroe = val + '&nbsp;' + 'required';
+//         const txt = document.createElement('span');
+//         txt.style.textTransform = 'capitalize';
+//         txt.innerHTML = arroe;
+//         const validationMsg = element.nextSibling;
+
+//         if (element.value === '') {
+//             if (!validationMsg || validationMsg.nodeName !== 'SPAN') {
+//                 element.insertAdjacentElement('afterend', txt);
+//             }
+//         } else {
+//             if (validationMsg && validationMsg.nodeName === 'SPAN') {
+//                 validationMsg.remove();
+//             }
+//         }
+
+
+//         const node = event.target.getAttribute('type');
+//         // const emailValue = ;
+//         if (node === 'email') {
+//             const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+//             if (emailRegex.test(event.target.value.trim())) {
+//                 event.target.style.color = 'green';
+
+//             } else {
+//                 event.target.style.color = 'red';
+//                 element.insertAdjacentElement('afterend', txt);
+//                 // console.log('Invalid email'); // Add this line
+//             }
+//         }
+
 //     };
 
-//     return { handleChange, inp, errors };
+
+
+
+
+//     return { handleBlur };
 // };
 
-// export default CustomHook;
+// export default UseCustomHook;
+
+
+
+
+
+
+
 
 
 
@@ -287,48 +248,4 @@ export default UseCustomHook;
 
 
 
-
-// // import React from 'react';
-
-// // const useCustomHook = () => {
-
-// //     React.useEffect(() => {
-// //         const elements = document.querySelectorAll('.thisrequired');
-// //         for (let i = 0; i < elements.length; i++) {
-// //             const element = elements[i];
-// //             console.log('called element');
-// //             console.log(element);
-// //             element.addEventListener('blur', handleBlur(element));
-// //         }
-// //         // return () => {
-// //         //     for (let i = 0; i < elements.length; i++) {
-// //         //         const element = elements[i];
-// //         //         element.removeEventListener('blur', handleBlur(element));
-// //         //     }
-// //         // };
-// //     }, []);
-
-// //     const handleBlur = (element) => (event) => {
-// //         const val = element.getAttribute('name');
-// //         const arroe = val + '&nbsp;' + 'required';
-// //         const txt = document.createElement('span');
-// //         txt.style.textTransform = 'capitalize';
-// //         txt.innerHTML = arroe;
-// //         const validationMsg = element.nextSibling;
-
-// //         if (element.value === '') {
-// //             if (!validationMsg || validationMsg.nodeName !== 'SPAN') {
-// //                 element.insertAdjacentElement('afterend', txt);
-// //             }
-// //         } else {
-// //             if (validationMsg && validationMsg.nodeName === 'SPAN') {
-// //                 validationMsg.remove();
-// //             }
-// //         }
-// //     };
-
-// //     return { useCustomHook };
-// // };
-
-// // export default useCustomHook;
 
