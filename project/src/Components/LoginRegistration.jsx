@@ -3,6 +3,10 @@ import CustomHook from '../Hooks/useCustomHook';
 
 
 const LoginRegistration = () => {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
     const { handleChange, inp, errors } = CustomHook({}, {});
     const [isSignUpMode, setIsSignUpMode] = useState(false);
 
@@ -15,6 +19,44 @@ const LoginRegistration = () => {
     }
 
 
+    // const savedata = (event) => {
+    //     event.preventDefault();
+    //     console.log("save data", inp);
+    //     fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
+    //         console.log(result);
+    //     })
+    // }
+
+    const registration = (event) => {
+        event.preventDefault();
+        // console.log(inp);
+        // fetch("http://localhost/API/registration", {
+        fetch("http://localhost:5000/posts", {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.
+            // mode: "no-cors", // no-cors, *cors, same-origin
+            // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            headers: {
+                "Content-Type": "application/json",
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(inp)
+        }).then((res) => res.json()).then((result) => {
+            console.log(result);
+
+            setUsername(''); // Clear username input value
+            setPassword(''); // Clear password input value
+
+
+
+        })
+        //     // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
+        //     //     console.log(result);
+        //     // })
+
+    }
+
+
+
 
 
 
@@ -23,10 +65,10 @@ const LoginRegistration = () => {
             <div className={`loginregistration  ${isSignUpMode ? "sign-up-mode" : ""}`}>
                 <div className="forms-container">
                     <div className="signin-signup">
-                        <form action="#" className="sign-in-form" >
+                        <form action="#" className="sign-in-form"  >
                             <h2 className="title">Sign in</h2>
-                            {JSON.stringify(inp)}
-                            {JSON.stringify(errors.usernameError)}
+                            {/* {JSON.stringify(inp)}
+                            {JSON.stringify(errors.usernameError)} */}
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
                                 <input type="text" onBlur={handleChange} name="username" placeholder="Username" className='thisrequired' />
@@ -54,19 +96,19 @@ const LoginRegistration = () => {
                             </div>
                         </form>
 
-                        <form action="#" className="sign-up-form">
+                        <form action="#" className="sign-up-form" onSubmit={registration}>
                             <h2 className="title">Sign up</h2>
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
-                                <input type="text" placeholder="Username" className='thisrequired' />
+                                <input type="text" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} onBlur={handleChange} className='thisrequired' name='name' />
                             </div>
                             <div className="input-field">
                                 <i className="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email" className='thisrequired' />
+                                <input type="email" placeholder="Email" onBlur={handleChange} className='thisrequired' name='email' />
                             </div>
                             <div className="input-field">
                                 <i className="fas fa-lock"></i>
-                                <input type="password" placeholder="Password" className='thisrequired' />
+                                <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} onBlur={handleChange} className='thisrequired' name='password' />
                             </div>
                             <input type="submit" className="button" value="Sign up" />
                             <p className="social-text">Or Sign up with social platforms</p>
