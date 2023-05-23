@@ -6,9 +6,13 @@ const LoginRegistration = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setemail] = useState('');
+    // const [role, setRole] = useState('Admin'); // Add role field to the state
 
-    const { handleChange, inp, errors } = CustomHook({}, {});
-    const [isSignUpMode, setIsSignUpMode] = useState(false);
+    const { handleChange, inp, errors } = CustomHook({ role: "Client" }, {});
+    const [isSignUpMode, setIsSignUpMode] = useState(true);
+
+
 
     function handleSignUpClick() {
         setIsSignUpMode(true);
@@ -29,36 +33,33 @@ const LoginRegistration = () => {
 
     const registration = (event) => {
         event.preventDefault();
-        // console.log(inp);
-        // fetch("http://localhost/API/registration", {
+
+        console.log(inp);
+
+        // Determine the role based on the email value
+        // if (inp.role === "Admin") {
+        //     setRole('Admin');
+        // } else {
+        //     setRole('Client');
+        // }
+
         fetch("http://localhost:5000/posts", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             // mode: "no-cors", // no-cors, *cors, same-origin
             // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
             headers: {
                 "Content-Type": "application/json",
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(inp)
         }).then((res) => res.json()).then((result) => {
             console.log(result);
-
             setUsername(''); // Clear username input value
             setPassword(''); // Clear password input value
-
-
+            setemail(''); // Clear email input value
 
         })
-        //     // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
-        //     //     console.log(result);
-        //     // })
 
     }
-
-
-
-
-
 
     return (
         <>
@@ -104,7 +105,7 @@ const LoginRegistration = () => {
                             </div>
                             <div className="input-field">
                                 <i className="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email" onBlur={handleChange} className='thisrequired' name='email' />
+                                <input type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="Email" onBlur={handleChange} className='thisrequired' name='email' />
                             </div>
                             <div className="input-field">
                                 <i className="fas fa-lock"></i>
