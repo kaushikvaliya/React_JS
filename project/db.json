@@ -23,241 +23,6 @@
       "name": "Robert",
       "email": "robert@mail.com",
       "password": "East street"
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12",
-      "id": 5
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12",
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "name": "kaushik",
-      "id": 12
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 13
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 14
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 15
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 16
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 17
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "id": 18
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345",
-      "id": 19
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345",
-      "id": 20
-    },
-    {
-      "id": 21
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123",
-      "id": 22
-    },
-    {
-      "inp": {
-        "name": "kaushik",
-        "email": "valiya.kaushik001@gmail.com",
-        "password": "134"
-      },
-      "role": "someRoleValue",
-      "id": 23
-    },
-    {
-      "inp": {
-        "name": "kaushik",
-        "email": "valiya.kaushik001@gmail.com",
-        "password": "12345"
-      },
-      "role": "",
-      "id": 24
-    },
-    {
-      "inp": {
-        "name": "kaushik",
-        "email": "jay.amin.tops@gmail.com",
-        "password": "123456"
-      },
-      "id": 25
-    },
-    {
-      "name": "kaushik",
-      "email": "jay.amin.tops@gmail.com",
-      "password": "123456u",
-      "id": 26
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "1234567",
-      "id": 27
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "1345",
-      "id": 28
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "111",
-      "id": 29
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123456",
-      "id": 30
-    },
-    {
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123456",
-      "id": 31
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345",
-      "id": 32
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "",
-      "password": "1234",
-      "id": 33
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12456",
-      "id": 34
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "1234567",
-      "id": 35
-    },
-    {
-      "role": 2,
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345",
-      "id": 36
-    },
-    {
-      "role": 2,
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123456",
-      "id": 37
-    },
-    {
-      "role": "Admin",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123456",
-      "id": 38
-    },
-    {
-      "role": "Admin",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345678",
-      "id": 39
-    },
-    {
-      "role": {
-        "role": "Admin"
-      },
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "1234",
-      "id": 40
-    },
-    {
-      "role": {
-        "role": "Admin"
-      },
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "13",
-      "id": 41
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123456",
-      "id": 42
-    },
-    {
-      "role": "Client",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12345678",
-      "id": 43
     }
   ],
   "comments": [
@@ -269,5 +34,28 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "5432",
+      "id": 2
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "jay.amin.tops@gmail.com",
+      "password": "123",
+      "id": 3
+    }
+  ]
 }

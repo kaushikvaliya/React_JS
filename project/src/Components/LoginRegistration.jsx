@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
+import axios from 'axios';
 
 
 const LoginRegistration = () => {
@@ -9,7 +10,7 @@ const LoginRegistration = () => {
     const [email, setemail] = useState('');
     // const [role, setRole] = useState('Admin'); // Add role field to the state
 
-    const { handleChange, inp, errors } = CustomHook({ role: "Client" }, {});
+    const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const [isSignUpMode, setIsSignUpMode] = useState(true);
 
 
@@ -23,13 +24,32 @@ const LoginRegistration = () => {
     }
 
 
-    // const savedata = (event) => {
-    //     event.preventDefault();
-    //     console.log("save data", inp);
-    //     fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
-    //         console.log(result);
-    //     })
-    // }
+    const savedata = async (event) => {
+        event.preventDefault();
+        console.log("save data", inp);
+        // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
+        //     console.log(result);
+        // })
+
+        try {
+            const response = await axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`,)
+                .then((response) => {
+                    console.log(response);
+                    if (response.status === 200) {
+                        console.log("server connected");
+                    } else {
+                        console.log("error while connecting to server.");
+                    }
+                }).catch((error) => {
+                    console.log(error);
+
+                });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
 
     const registration = (event) => {
         event.preventDefault();
@@ -43,7 +63,7 @@ const LoginRegistration = () => {
         //     setRole('Client');
         // }
 
-        fetch("http://localhost:5000/posts", {
+        fetch("http://localhost:5000/users", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             // mode: "no-cors", // no-cors, *cors, same-origin
             // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -53,6 +73,8 @@ const LoginRegistration = () => {
             body: JSON.stringify(inp)
         }).then((res) => res.json()).then((result) => {
             console.log(result);
+
+
             setUsername(''); // Clear username input value
             setPassword(''); // Clear password input value
             setemail(''); // Clear email input value
@@ -66,7 +88,7 @@ const LoginRegistration = () => {
             <div className={`loginregistration  ${isSignUpMode ? "sign-up-mode" : ""}`}>
                 <div className="forms-container">
                     <div className="signin-signup">
-                        <form action="#" className="sign-in-form"  >
+                        <form action="#" className="sign-in-form" onSubmit={savedata} >
                             <h2 className="title">Sign in</h2>
                             {/* {JSON.stringify(inp)}
                             {JSON.stringify(errors.usernameError)} */}
