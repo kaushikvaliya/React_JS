@@ -94,6 +94,7 @@ function Calculator() {
         const firstNumberValue = parseFloat(firstNumber);
         const secondNumberValue = parseFloat(secondNumber);
 
+        console.log(operator);
         switch (operator) {
             case "+":
                 setResult(firstNumberValue + secondNumberValue);
