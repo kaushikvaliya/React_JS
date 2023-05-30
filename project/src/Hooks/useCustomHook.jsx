@@ -12,15 +12,15 @@ const CustomHook = (intval, initError) => {
 
         const errorKey = e.target.name;
         const errorMessage = `${e.target.name} is required`;
-        console.log(errorMessage);
+        // console.log(errorMessage);
         const errorContainer = e.target.nextElementSibling;
 
         if (e.target.className === "thisrequired") {
-            console.log("error");
+            // console.log("error");
 
             if (e.target.value === "") {
                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: errorMessage }));
-                console.log({ [errorKey]: errorMessage });
+                // console.log({ [errorKey]: errorMessage });
 
 
                 if (!errorContainer || errorContainer.nodeName !== 'SPAN') {

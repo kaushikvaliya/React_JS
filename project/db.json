@@ -37,7 +37,7 @@
   },
   "users": [
     {
-      "role": "2",
+      "role": "1",
       "name": "kaushik",
       "email": "valiya.kaushik001@gmail.com",
       "password": "12345",
@@ -49,13 +49,6 @@
       "email": "valiya.kaushik001@gmail.com",
       "password": "5432",
       "id": 2
-    },
-    {
-      "role": "2",
-      "name": "test",
-      "email": "jay.amin.tops@gmail.com",
-      "password": "123",
-      "id": 3
     }
   ]
 }
