@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import HeaderComponent from './Includes/HeaderComponent';
 import Homepage from './Pages/Homepage.jsx';
@@ -8,6 +8,7 @@ import ServicesPage from './Pages/ServicesPage.jsx';
 import LoginRegistration from './Components/LoginRegistration.jsx';
 // import AdminDashBoard from './Components/LoginRegistration.jsx';
 // import FetchAPI from './Components/FetchAPI';
+const AdminRouter = React.lazy(() => import("./Admin/AdminRouter"))
 
 const Mainrouter = createBrowserRouter([
     {
@@ -64,6 +65,15 @@ const Mainrouter = createBrowserRouter([
         element:
             <>
                 <h2>userdarshboard</h2>
+            </>
+
+    }, {
+        path: "admin/*",
+        element:
+            <>
+                <Suspense fallback={<h1>Loading....</h1>}>
+                    <AdminRouter></AdminRouter>
+                </Suspense>
             </>
 
     }

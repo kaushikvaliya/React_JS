@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const LoginRegistration = () => {
@@ -47,12 +47,10 @@ const LoginRegistration = () => {
                     //
                     // console.log(res.data[0].role);
                     if (res.data[0].role == 1) {
-                        navigate("/admindashboard")
-                        // console.log("admin");
+                        navigate("/admin/admindashboard")
                     } else {
                         navigate("/userdarshboard")
 
-                        // console.log("user");
                     }
 
 
@@ -113,10 +111,13 @@ const LoginRegistration = () => {
 
     return (
         <>
+
             {
                 disperror ? <>error while conectiong please try after some time</> :
                     <>
+                        <Link className='home text-dark' to='/' ><i className='fa fa-home'></i></Link>
                         <div className={`loginregistration  ${isSignUpMode ? "sign-up-mode" : ""}`}>
+
                             <div className="forms-container">
                                 <div className="signin-signup">
                                     <form action="#" className="sign-in-form" onSubmit={savedata} >
@@ -187,6 +188,7 @@ const LoginRegistration = () => {
                             <div className="panels-container">
                                 <div className="panel left-panel">
                                     <div className="content">
+
                                         <h3>New here ?</h3>
                                         <p>
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
@@ -196,8 +198,10 @@ const LoginRegistration = () => {
                                             Sign Up
                                         </button>
                                     </div>
+
                                     <img src="img/log.svg" className="image" alt="" />
                                 </div>
+
                                 <div className="panel right-panel">
                                     <div className="content">
                                         <h3>One of us ?</h3>

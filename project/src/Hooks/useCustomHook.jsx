@@ -3,6 +3,8 @@ import { useState } from 'react';
 
 const CustomHook = (intval, initError) => {
 
+
+
     const [inp, setInput] = useState(intval)
     const [errors, setError] = useState(initError)
 

@@ -49,6 +49,10 @@
       "email": "valiya.kaushik001@gmail.com",
       "password": "5432",
       "id": 2
+    },
+    {
+      "role": "2",
+      "id": 3
     }
   ]
 }
