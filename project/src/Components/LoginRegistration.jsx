@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 
 const LoginRegistration = () => {
@@ -14,8 +15,11 @@ const LoginRegistration = () => {
     const navigate = useNavigate()
     const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const [isSignUpMode, setIsSignUpMode] = useState(true);
+    const [loginmes, setloginmes] = useState("");
 
 
+
+    const [cookies, setCookie, removeCookie] = useCookies(['username']);
 
     function handleSignUpClick() {
         setIsSignUpMode(true);
@@ -38,25 +42,36 @@ const LoginRegistration = () => {
         try {
             const response = await axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`)
                 .then((res) => {
-                    console.log(res);
+                    // console.log(res);
+
+
+
                     if (res.status === 200) {
+
                         console.log("server connected");
+                        console.log(res.data.length);
+
+                        if (res.data.length > 0) {
+
+                            setCookie("username", res.data[0].name);
+                            setCookie("id", res.data[0].id);
+                            // console.log(res.data[0].name);
+
+                            if (res.data[0].role == 1) {
+                                navigate("/admin/admindashboard");
+                            } else {
+                                navigate("/userdarshboard");
+                            }
+                        } else {
+                            setloginmes("invalid user")
+                        }
+
                     } else {
                         console.log("error while connecting to server.");
                     }
-                    //
-                    // console.log(res.data[0].role);
-                    if (res.data[0].role == 1) {
-                        navigate("/admin/admindashboard")
-                    } else {
-                        navigate("/userdarshboard")
-
-                    }
-
 
                 }).catch((error) => {
                     console.log(error);
-
                     // console.log("vvvv", error);
                     setdisperror(true);
                     if (error.response) {
@@ -80,14 +95,7 @@ const LoginRegistration = () => {
     const registration = (event) => {
         event.preventDefault();
 
-        console.log(inp);
-
-        // Determine the role based on the email value
-        // if (inp.role === "Admin") {
-        //     setRole('Admin');
-        // } else {
-        //     setRole('Client');
-        // }
+        // console.log(inp);
 
         fetch("http://localhost:5000/users", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -113,7 +121,7 @@ const LoginRegistration = () => {
         <>
 
             {
-                disperror ? <>error while conectiong please try after some time</> :
+                disperror ? <> error while conectiong please try after some time </> :
                     <>
                         <Link className='home text-dark' to='/' ><i className='fa fa-home'></i></Link>
                         <div className={`loginregistration  ${isSignUpMode ? "sign-up-mode" : ""}`}>
@@ -149,6 +157,20 @@ const LoginRegistration = () => {
                                                 <i className="fab fa-linkedin-in"></i>
                                             </a>
                                         </div>
+
+                                        {loginmes ? <div className="toast-container position-fixed  end-0 p-3" style={{ bottom: '-80px' }}>
+                                            <div id="liveToast" className="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div className="toast-header">
+                                                    {/* <img src="..." className="rounded me-2" alt="..."/> */}
+                                                    <strong className="me-auto">login alert</strong>
+                                                    {/* <small>11 mins ago</small> */}
+                                                    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close" onClick={() => setloginmes("")}></button>
+                                                </div>
+                                                <div className="toast-body">
+                                                    {loginmes}
+                                                </div>
+                                            </div>
+                                        </div> : ""}
                                     </form>
 
                                     <form action="#" className="sign-up-form" onSubmit={registration}>

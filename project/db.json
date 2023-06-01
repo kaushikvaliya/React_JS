@@ -52,6 +52,9 @@
     },
     {
       "role": "2",
+      "name": "test",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "123",
       "id": 3
     }
   ]

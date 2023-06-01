@@ -449,11 +449,26 @@ button:active {
     top: 10px;
     right: 10px;
     z-index: 99999;
+    height: 40px;
+    width: 40px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
 
 }
 
+.home i {
+    transition: all .5s ease-in-out;
+    transform: scale(1);
+    color: #ffff;
+    display: block;
+}
 
-
+.home:hover i {
+    transform: scale(1.2);
+}
 
 a {
     text-decoration: none;
@@ -481,9 +496,11 @@ body.dark {
     z-index: 1000;
     display: block;
     top: 0;
-    background-color: antiquewhite;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     transform: translate(0);
     transition: all .5s ease-in-out;
+    /* box-shadow: 2px 2px 2px #fff; */
 }
 
 
@@ -496,7 +513,8 @@ body.dark {
 }
 
 header {
-    background-color: #cccc;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
 }
 
@@ -546,6 +564,11 @@ nav {
     border: none;
     margin: 10px;
     background-color: transparent;
+}
+
+#btn i {
+    display: block;
+    font-size: 20px;
 }
 
 #main.mainactive {

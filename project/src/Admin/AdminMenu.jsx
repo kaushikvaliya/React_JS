@@ -23,16 +23,9 @@ const AdminMenu = () => {
                     </div>
                 </div>
                 <div className="header_text">
-                    <ul>
+                    <ul className='ps-0'>
                         <li><Link to='admindashboard'>admindashboard</Link></li>
                         <li><Link to='adminalluser'>adminalluser</Link></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">home</a></li>
                     </ul>
                 </div>
 
@@ -57,25 +50,23 @@ const AdminMenu = () => {
 
                         <div className="nav_link">
                             <button id="theme-switch" onClick={handleThemeToggle}>
-                                <i className={isDarkTheme ? 'fa fa-sun' : 'fa fa-moon'}></i>
+                                <i className={isDarkTheme ? 'fa fa-2x fa-sun' : 'fa fa-2x fa-moon'}></i>
                             </button>
                             <button><i className="fa-solid fa-2x fa-user"></i></button>
-
+                            {/* <div className="list">
+                                <ul>
+                                    <li><Link to="#"></Link></li>
+                                </ul>
+                            </div> */}
                         </div>
                     </nav>
                 </header>
 
 
-                <section>
-                    <div className="">
-                        <div className="col">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ullam quasi distinctio
-                                laboriosam, inventore nobis id veniam iure architecto modi harum natus numquam. Odit porro
-                                nostrum ab necessitatibus quidem autem?</p>
-                        </div>
-                    </div>
+                <section className='px-2 pt-2'>
+
+                    <Outlet></Outlet>
                 </section>
-                <Outlet></Outlet>
             </main >
 
 
