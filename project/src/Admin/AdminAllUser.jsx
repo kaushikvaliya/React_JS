@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllUserData = () => {
 
@@ -8,7 +9,7 @@ const AllUserData = () => {
     const [allUsers, setAllUsers] = useState(false);
 
     useEffect(() => {
-        savedata()
+        savedata();
     }, [])
 
 
@@ -34,25 +35,18 @@ const AllUserData = () => {
                                     <td>{value.name}</td>
                                     <td>{value.email}</td>
                                     <td>{value.id}</td>
+                                    <td colSpan={2}>
+                                        <Link className='btn btn-primary' to='#'>submit</Link>
+                                        <Link className='btn btn-primary' to='#'>DELETE</Link>
+
+                                    </td>
                                 </tr>
                             )
 
-                        })
+                        });
 
-
-                        setAllUsers(allUserDataList)
-                        setLoader(true)
-
-
-
-
-
-
-
-
-
-
-
+                        setAllUsers(allUserDataList);
+                        setLoader(true);
 
                     } else {
                         console.log("error while connecting to server.");
@@ -89,6 +83,7 @@ const AllUserData = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Id</th>
+                            <th>scshan</th>
                         </tr>
                     </thead>
                     <tbody>

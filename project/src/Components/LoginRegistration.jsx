@@ -10,8 +10,7 @@ const LoginRegistration = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setemail] = useState('');
-    const [disperror, setdisperror] = useState('');
-    // const [role, setRole] = useState('Admin'); // Add role field to the state
+    const [disperror, setdisperror] = useState(false);
     const navigate = useNavigate()
     const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const [isSignUpMode, setIsSignUpMode] = useState(true);
@@ -32,7 +31,7 @@ const LoginRegistration = () => {
 
     const savedata = async (event) => {
         event.preventDefault();
-        console.log("save data", inp);
+        // console.log("save data", inp);
         // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
         //     console.log(result);
         // })
@@ -43,29 +42,21 @@ const LoginRegistration = () => {
             const response = await axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`)
                 .then((res) => {
                     // console.log(res);
-
-
-
                     if (res.status === 200) {
-
-                        console.log("server connected");
+                        // console.log("server connected");
                         console.log(res.data.length);
-
                         if (res.data.length > 0) {
-
                             setCookie("username", res.data[0].name);
                             setCookie("id", res.data[0].id);
-                            // console.log(res.data[0].name);
-
                             if (res.data[0].role == 1) {
                                 navigate("/admin/admindashboard");
                             } else {
                                 navigate("/userdarshboard");
                             }
                         } else {
-                            setloginmes("invalid user")
+                            setloginmes("invalid user");
+                            console.log("invalid user");
                         }
-
                     } else {
                         console.log("error while connecting to server.");
                     }
@@ -82,8 +73,6 @@ const LoginRegistration = () => {
                     } else {
                         console.log(error);
                     }
-
-
                 });
         }
         catch (error) {
@@ -239,6 +228,8 @@ const LoginRegistration = () => {
                                 </div>
                             </div>
                         </div>
+
+
                     </>
             }
 
