@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
+
 const CustomHook = (intval, initError) => {
 
 
@@ -39,7 +40,10 @@ const CustomHook = (intval, initError) => {
             }
         }
     }
-    return { handleChange, inp, errors }
+    const updatedData = (data) => {
+        setInput(data)
+    }
+    return { handleChange, inp, errors, updatedData }
 };
 
 export default CustomHook;

@@ -10,10 +10,7 @@ const AllUserData = () => {
 
     useEffect(() => {
         savedata();
-    }, [])
-
-
-
+    }, []);
 
     const savedata = async (event) => {
         try {
@@ -31,14 +28,16 @@ const AllUserData = () => {
                             return (
 
                                 <tr key={key} >
-                                    <td>{key}</td>
+                                    <td>{i + 1}</td>
                                     <td>{value.name}</td>
                                     <td>{value.email}</td>
                                     <td>{value.id}</td>
-                                    <td colSpan={2}>
-                                        <Link className='btn btn-primary' to='#'>submit</Link>
-                                        <Link className='btn btn-primary' to='#'>DELETE</Link>
+                                    <td>
+                                        <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
 
+                                    </td>
+                                    <td>
+                                        <Link className='btn btn-danger' to='#'>DELETE</Link>
                                     </td>
                                 </tr>
                             )
@@ -83,7 +82,7 @@ const AllUserData = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Id</th>
-                            <th>scshan</th>
+                            <th colSpan={2}>scshan</th>
                         </tr>
                     </thead>
                     <tbody>
