@@ -44,34 +44,8 @@ const EditeAdminAllUser = () => {
                     console.log(error);
                 }
             });
+
     }
-
-
-    // let dtnClickdelete = async () => {
-    //     console.log("called update", inp);
-    //     const response = await axios.delete(`http://localhost:5000/users/${id}`, inp)
-    //         .then((response) => {
-    //             if (response.status == 200) {
-    //                 console.log("server connected", response);
-    //                 setErrorMsg(false)
-    //                 navigate("/admin/adminalluser");
-    //             } else {
-    //                 console.log("error while connecting to the server");
-    //             }
-    //         }).catch((error) => {
-    //             console.log("inside catch", error);
-    //             setErrorMsg(true)
-    //             if (error.response) {
-    //                 console.log(error.response);
-    //                 console.log("server responded");
-    //             } else if (error.request) {
-    //                 console.log("network error");
-    //             } else {
-    //                 console.log(error);
-    //             }
-    //         });
-    // }
-
 
     const savedata = async (event) => {
         try {
@@ -108,44 +82,37 @@ const EditeAdminAllUser = () => {
     }
     return (
         <>
-
-
-
-            <div className="proj-admin-card">
-                <div className="card">
-                    <div className="card-body">
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="row mt-3">
-                                    <div className="col">
-                                        {/* {JSON.stringify(inp)} */}
-                                        {/* { errorMsg ? "true":JSON.stringify(inp) } */}
-                                        <input type="text" className='form-control' placeholder='Enter User Name' value={inp.name} name="name" onChange={handleChange} id="username" />
-                                    </div>
+            <div className="card">
+                <div className="card-body">
+                    <div className="row">
+                        <div className="col-6">
+                            <div className="row mt-3">
+                                <div className="col">
+                                    {/* {JSON.stringify(inp)} */}
+                                    {/* { errorMsg ? "true":JSON.stringify(inp) } */}
+                                    <input type="text" className='form-control' placeholder='Enter User Name' value={inp.name} name="name" onChange={handleChange} id="username" />
                                 </div>
-                                <div className="row mt-3">
-                                    <div className="col">
-                                        <input type="text" className='form-control' placeholder='Enter User Name' value={inp.password} name="password" onChange={handleChange} id="username" />
-                                    </div>
+                            </div>
+                            <div className="row mt-3">
+                                <div className="col">
+                                    <input type="text" className='form-control' placeholder='Enter User Name' value={inp.password} name="password" onChange={handleChange} id="username" />
                                 </div>
-                                <div className="row mt-3">
-                                    <div className="col">
-                                        <input type="text" className='form-control' placeholder='Enter User Name' value={inp.email} name="email" onChange={handleChange} id="username" />
-                                    </div>
+                            </div>
+                            <div className="row mt-3">
+                                <div className="col">
+                                    <input type="text" className='form-control' placeholder='Enter User Name' value={inp.email} name="email" onChange={handleChange} id="username" />
                                 </div>
-                                <div className="row mt-3">
-                                    <div className="col">
-                                        <input type="button" className='btn btn-primary' value="Update" name="btn-update" onClick={handleUpdateBtnClick} id="btn-update" />
-                                    </div>
+                            </div>
+                            <div className="row mt-3">
+                                <div className="col">
+                                    <input type="button" className='btn btn-primary' value="Update" name="btn-update" onClick={handleUpdateBtnClick} id="btn-update" />
+                                    <Link className='btn btn-primary mx-2' to="/admin/adminalluser">back</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
 
         </>
     );

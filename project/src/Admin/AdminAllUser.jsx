@@ -4,13 +4,29 @@ import { Link } from 'react-router-dom';
 
 const AllUserData = () => {
 
-    const [errorMsg, setErrorMsg] = useState(false);
-    const [loader, setLoader] = useState(false);
-    const [allUsers, setAllUsers] = useState(false);
+    // const [errorMsg, setErrorMsg] = useState(false);
+    const [loader, setLoader] = useState(true);
+    // delete
+    const [loade, setLoade] = useState(true);
+
+    const [allUsers, setAllUsers] = useState(null);
+    // const [allUsersData, setAllUsersData] = useState(null);
+    const [scarchData, setscarchData] = useState(null);
 
     useEffect(() => {
         savedata();
-    }, []);
+    }, [loade]);
+
+
+    let hendelDelete = async (id) => {
+
+        const response = await axios.delete(`http://localhost:5000/users/${id}`)
+            .then(() => {
+                setLoade(false);
+                // savedata();
+            })
+    }
+
 
     const savedata = async (event) => {
         try {
@@ -18,7 +34,7 @@ const AllUserData = () => {
                 .then((res) => {
                     if (res.status === 200) {
                         let allUserDataList = ""
-
+                        setscarchData(res.data);
                         allUserDataList = Object.entries(res.data).map(([key, value], i) => {
                             // console.log("key", key);
                             // console.log("value", value.name);
@@ -37,7 +53,7 @@ const AllUserData = () => {
 
                                     </td>
                                     <td>
-                                        <Link className='btn btn-danger' to='#'>DELETE</Link>
+                                        <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
                                     </td>
                                 </tr>
                             )
@@ -71,8 +87,66 @@ const AllUserData = () => {
         }
     }
 
+    const handleSearch = (event) => {
+        console.log("allUsers ", allUsers);
+        console.log("handleSearch ", event.target.value);
+        const value = event.target.value.toLowerCase();
+
+        const result = scarchData.filter((data) => {
+            console.log("val", data);
+            return (
+                data.name.toLowerCase().search(value) !== -1 ||
+                data.email.toLowerCase().search(value) !== -1 ||
+                data.id.toString().search(value) !== -1
+
+            );
+        });
+
+        console.log(result);
+        let allUserDataList = Object.entries(result).map(([key, value], i) => {
+            return (
+                <tr key={key} >
+                    <td>{i + 1}</td>
+                    <td>{value.name}</td>
+                    <td>{value.email}</td>
+                    <td>{value.id}</td>
+                    <td>
+                        <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
+
+                    </td>
+                    <td>
+                        <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
+                    </td>
+                </tr>
+            )
+
+        });
+
+        setAllUsers(allUserDataList);
+        setLoader(true);
+    }
     return (
         <>
+
+            <div className="box">
+                <input type="text" onChange={(event) => handleSearch(event)} />
+            </div>
+
+            <section>
+                <div className="col-12">
+                    <div className="d-flex justify-content-between">
+                        <div className="col-6">
+                            <p className='h1'>Add new user data</p>
+                        </div>
+                        <div className="col-6 text-end" >
+                            <Link className='btn btn-primary' to="/admin/adminadduserdata">Add new user</Link>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
             <section>
                 <h2 className='text-center my-3'>All user data</h2>
                 <table className='w-100 table'>

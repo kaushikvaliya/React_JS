@@ -38,7 +38,7 @@
   "users": [
     {
       "role": "1",
-      "name": "kaushik111",
+      "name": "kaushik",
       "email": "valiya.kaushik001@gmail.com",
       "password": "12345",
       "id": 1
@@ -47,15 +47,65 @@
       "role": "2",
       "name": "kaushik",
       "email": "valiya.kaushik001@gmail.com",
-      "password": "5432",
+      "password": "1245",
       "id": 2
     },
     {
       "role": "2",
-      "name": "test",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "123",
+      "name": "vvvv",
+      "email": "valiya.kik001@gmail.com",
+      "password": "890",
       "id": 3
+    },
+    {
+      "role": "2",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "987654321",
+      "id": 5
+    },
+    {
+      "role": "2",
+      "name": "Alice Johnson",
+      "email": "alicejohnson@example.com",
+      "password": "password456",
+      "id": 6
+    },
+    {
+      "role": "2",
+      "name": "User 46",
+      "email": "user46@example.com",
+      "password": "password46",
+      "id": 46
+    },
+    {
+      "role": "2",
+      "name": "User 47",
+      "email": "user47@example.com",
+      "password": "password47",
+      "id": 47
+    },
+    {
+      "role": "2",
+      "name": "User 48",
+      "email": "user48@example.com",
+      "password": "password48",
+      "id": 48
+    },
+    {
+      "role": "2",
+      "name": "User 49",
+      "email": "user49@example.com",
+      "password": "password49",
+      "id": 49
+    },
+    {
+      "role": "2",
+      "name": "User 50",
+      "email": "user50@example.com",
+      "password": "password50",
+      "id": 50
     }
+
   ]
 }
