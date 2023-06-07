@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 
 const AllUserData = () => {
 
-    // const [errorMsg, setErrorMsg] = useState(false);
     const [loader, setLoader] = useState(true);
     // delete
     const [loade, setLoade] = useState(true);
 
     const [allUsers, setAllUsers] = useState(null);
-    // const [allUsersData, setAllUsersData] = useState(null);
     const [scarchData, setscarchData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +17,6 @@ const AllUserData = () => {
 
 
     let hendelDelete = async (id) => {
-
         const response = await axios.delete(`http://localhost:5000/users/${id}`)
             .then(() => {
                 setLoade(false);
@@ -112,7 +109,6 @@ const AllUserData = () => {
                     <td>{value.id}</td>
                     <td>
                         <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
-
                     </td>
                     <td>
                         <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
@@ -161,7 +157,6 @@ const AllUserData = () => {
                     </thead>
                     <tbody>
                         {loader ? allUsers : <tr><td colSpan={5}>no record fund</td></tr>}
-
                     </tbody>
                 </table>
             </section>

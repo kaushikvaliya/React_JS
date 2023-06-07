@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
-import axios from 'axios';
-import { useCookies } from 'react-cookie';
+
 
 const AdminAdduserData = () => {
 

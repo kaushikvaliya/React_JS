@@ -47,12 +47,12 @@
       "role": "2",
       "name": "kaushik",
       "email": "valiya.kaushik001@gmail.com",
-      "password": "1245",
+      "password": "12",
       "id": 2
     },
     {
       "role": "2",
-      "name": "vvvv",
+      "name": "vkk",
       "email": "valiya.kik001@gmail.com",
       "password": "890",
       "id": 3
@@ -105,7 +105,41 @@
       "email": "user50@example.com",
       "password": "password50",
       "id": 50
+    },
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "jay.amin.tops@gmail.com",
+      "password": "578",
+      "id": 51
+    },
+    {
+      "role": "2",
+      "name": "meet patel",
+      "password": "ffgghhjj",
+      "email": "meetp123@gmail.com",
+      "id": 53
+    },
+    {
+      "role": "2",
+      "name": "kaushik111",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "445566",
+      "id": 54
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "password": "222",
+      "email": "jay.amin.tops@gmail.com",
+      "id": 55
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "jay.amin.tops@gmail.com",
+      "password": "555",
+      "id": 66
     }
-
   ]
 }

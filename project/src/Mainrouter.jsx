@@ -56,7 +56,7 @@ const Mainrouter = createBrowserRouter([
         path: "/admindashboard",
         element:
             <>
-                <h2>admindashboard</h2>
+                <h2>admindashbhhhhhhoard</h2>
             </>
 
     },

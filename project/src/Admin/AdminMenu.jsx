@@ -1,9 +1,17 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { Link, Outlet } from 'react-router-dom';
+import CustomHook from '../Hooks/useCustomHook';
+
 
 const AdminMenu = () => {
+    const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
+
     const [isSidebarActive, setIsSidebarActive] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [cookies, setCookie, removeCookie] = useCookies([]);
+
 
     const handleSidebarToggle = () => {
         setIsSidebarActive(!isSidebarActive);
@@ -11,6 +19,12 @@ const AdminMenu = () => {
 
     const handleThemeToggle = () => {
         setIsDarkTheme(!isDarkTheme);
+    };
+    const handleLogout = () => {
+        axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`).then((response) => {
+            removeCookie('username');
+            // navigate('/loginregistration');
+        });
     };
     return (
         <>
@@ -27,6 +41,7 @@ const AdminMenu = () => {
                         <li><Link to='admindashboard'>admindashboard</Link></li>
                         <li><Link to='adminalluser'>adminalluser</Link></li>
                     </ul>
+                    {cookies.username && <button className='btn btn-primary' onClick={handleLogout}>Logout</button>}
                 </div>
 
 

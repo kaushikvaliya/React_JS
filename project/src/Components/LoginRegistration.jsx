@@ -29,6 +29,13 @@ const LoginRegistration = () => {
     }
 
 
+    const logout = () => {
+        axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`).then((response) => {
+            removeCookie('username');
+            // navigate('/loginregistration');
+        });
+    };
+
     const savedata = async (event) => {
         event.preventDefault();
         // console.log("save data", inp);
@@ -38,16 +45,19 @@ const LoginRegistration = () => {
         // console.log("inside name", inp.username);
         // console.log("inside password", inp.password);
         // console.log(inp.Password);
+        console.log(inp);
         try {
-            const response = await axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`)
+            const response = await axios.get(`http://localhost:5000/users?email=${inp.email}&password=${inp.password}`)
                 .then((res) => {
                     // console.log(res);
                     if (res.status === 200) {
                         // console.log("server connected");
+
                         console.log(res.data.length);
                         if (res.data.length > 0) {
                             setCookie("username", res.data[0].name);
                             setCookie("id", res.data[0].id);
+
                             if (res.data[0].role == 1) {
                                 navigate("/admin/admindashboard");
                             } else {
@@ -110,6 +120,14 @@ const LoginRegistration = () => {
         <>
 
             {
+                cookies.username && (
+                    <button onClick={logout}>Logout</button>
+                )
+            }
+
+
+
+            {
                 disperror ? <> error while conectiong please try after some time </> :
                     <>
                         <Link className='home text-dark' to='/' ><i className='fa fa-home'></i></Link>
@@ -123,7 +141,7 @@ const LoginRegistration = () => {
                         {JSON.stringify(errors.usernameError)} */}
                                         <div className="input-field">
                                             <i className="fas fa-user"></i>
-                                            <input type="text" onBlur={handleChange} name="name" placeholder="Username" className='thisrequired' />
+                                            <input type="email" onBlur={handleChange} name="email" placeholder="Email" className='thisrequired' />
 
                                         </div>
                                         <div className="input-field">
@@ -210,7 +228,7 @@ const LoginRegistration = () => {
                                         </button>
                                     </div>
 
-                                    <img src="img/log.svg" className="image" alt="" />
+                                    {/* <img src="img/log.svg" className="image" alt="" /> */}
                                 </div>
 
                                 <div className="panel right-panel">
@@ -224,7 +242,7 @@ const LoginRegistration = () => {
                                             Sign In
                                         </button>
                                     </div>
-                                    <img src="img/register.svg" className="image" alt="" />
+                                    {/* <img src="img/register.svg" className="image" alt="" /> */}
                                 </div>
                             </div>
                         </div>
@@ -238,3 +256,9 @@ const LoginRegistration = () => {
 };
 
 export default LoginRegistration;
+
+
+
+
+
+
