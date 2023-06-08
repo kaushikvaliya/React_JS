@@ -40,7 +40,7 @@
       "role": "1",
       "name": "kaushik",
       "email": "valiya.kaushik001@gmail.com",
-      "password": "12345",
+      "password": "2233",
       "id": 1
     },
     {
@@ -140,6 +140,27 @@
       "email": "jay.amin.tops@gmail.com",
       "password": "555",
       "id": 66
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "dhambhaparmar05@gimal.com",
+      "password": "5678",
+      "id": 67
+    },
+    {
+      "role": "2",
+      "name": "vivek",
+      "email": "jay.amin.tops@gmail.com",
+      "password": "555",
+      "id": 68
+    },
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "jay.amin.tops@gmail.com",
+      "password": "6yu",
+      "id": 69
     }
   ]
 }

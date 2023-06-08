@@ -8,13 +8,13 @@ import AdminAdduserData from './AdminAdduserData.jsx';
 import { useCookies } from 'react-cookie';
 
 const AdminRouter = () => {
-    const [cookies] = useCookies(['username']);
+    const [cookies] = useCookies(['id', 'username']);
     const navigate = useNavigate();
 
     // const isLoggedIn = cookies.username !== undefined;
 
     useEffect(() => {
-        if (!cookies.username) {
+        if (!cookies.id && !cookies.username) {
             navigate('/loginregistration');
         }
     }, [cookies, navigate]);

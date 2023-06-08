@@ -53,7 +53,7 @@ const EditeAdminAllUser = () => {
                 .then((res) => {
                     console.log();
                     if (res.status === 200) {
-                        console.log(res.data, "updatedData");
+                        // console.log(res.data, "updatedData"); 
                         updatedData(res.data);
                         // setState(res.data);
 

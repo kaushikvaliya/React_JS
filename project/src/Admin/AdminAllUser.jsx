@@ -9,7 +9,7 @@ const AllUserData = () => {
     const [loade, setLoade] = useState(true);
 
     const [allUsers, setAllUsers] = useState(null);
-    const [scarchData, setscarchData] = useState(null);
+    const [scarchData, setSearchData] = useState(null);
 
     useEffect(() => {
         savedata();
@@ -23,50 +23,68 @@ const AllUserData = () => {
                 // savedata();
             })
     }
+    const generateUserRows = (userData) => {
+        return Object.entries(userData).map(([key, value], i) => (
+            <tr key={key}>
+                <td>{i + 1}</td>
+                <td>{value.name}</td>
+                <td>{value.email}</td>
+                <td>{value.id}</td>
+                <td>
+                    <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edit</Link>
+                </td>
+                <td>
+                    <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
+                </td>
+            </tr>
+        ));
+    };
 
 
-    const savedata = async (event) => {
+    const savedata = async () => {
         try {
             const response = await axios.get("http://localhost:5000/users")
-                .then((res) => {
-                    if (res.status === 200) {
-                        let allUserDataList = ""
-                        setscarchData(res.data);
-                        allUserDataList = Object.entries(res.data).map(([key, value], i) => {
-                            // console.log("key", key);
-                            // console.log("value", value.name);
-                            // console.log("value", value.email);
-                            // console.log("value", value.id);
-                            // console.log("i", i);
-                            return (
+                .then((response) => {
 
-                                <tr key={key} >
-                                    <td>{i + 1}</td>
-                                    <td>{value.name}</td>
-                                    <td>{value.email}</td>
-                                    <td>{value.id}</td>
-                                    <td>
-                                        <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
+                    if (response.status === 200) {
+                        setSearchData(response.data);
+                        const allUserDataList = generateUserRows(response.data);
+                        // allUserDataList = Object.entries(res.data).map(([key, value], i) => {
+                        //     // console.log("key", key);
+                        //     // console.log("value", value.name);
+                        //     // console.log("value", value.email);
+                        //     // console.log("value", value.id);
+                        //     // console.log("i", i);
+                        //     return (
 
-                                    </td>
-                                    <td>
-                                        <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
-                                    </td>
-                                </tr>
-                            )
+                        //         <tr key={key} >
+                        //             <td>{i + 1}</td>
+                        //             <td>{value.name}</td>
+                        //             <td>{value.email}</td>
+                        //             <td>{value.id}</td>
+                        //             <td>
+                        //                 <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
 
-                        });
+                        //             </td>
+                        //             <td>
+                        //                 <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
+                        //             </td>
+                        //         </tr>
+                        //     )
+
+                        // });
+
+
 
                         setAllUsers(allUserDataList);
                         setLoader(true);
-
                     } else {
-                        console.log("error while connecting to server.");
+                        console.log("Error while connecting to the server.");
                     }
 
-                }).catch((error) => {
+                })
+                .catch((error) => {
                     console.log(error);
-                    // console.log("vvvv", error);
                     if (error.response) {
                         console.log(error.response);
                         console.log("server responded");
@@ -78,11 +96,16 @@ const AllUserData = () => {
 
 
                 });
-        }
-        catch (error) {
+
+        } catch (error) {
             console.log(error);
         }
-    }
+    };
+
+
+
+
+
 
     const handleSearch = (event) => {
         console.log("allUsers ", allUsers);
@@ -100,24 +123,24 @@ const AllUserData = () => {
         });
 
         console.log(result);
-        let allUserDataList = Object.entries(result).map(([key, value], i) => {
-            return (
-                <tr key={key} >
-                    <td>{i + 1}</td>
-                    <td>{value.name}</td>
-                    <td>{value.email}</td>
-                    <td>{value.id}</td>
-                    <td>
-                        <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
-                    </td>
-                    <td>
-                        <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
-                    </td>
-                </tr>
-            )
+        // let allUserDataList = Object.entries(result).map(([key, value], i) => {
+        //     return (
+        //         <tr key={key} >
+        //             <td>{i + 1}</td>
+        //             <td>{value.name}</td>
+        //             <td>{value.email}</td>
+        //             <td>{value.id}</td>
+        //             <td>
+        //                 <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edite</Link>
+        //             </td>
+        //             <td>
+        //                 <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
+        //             </td>
+        //         </tr>
+        //     )
 
-        });
-
+        // });
+        const allUserDataList = generateUserRows(result);
         setAllUsers(allUserDataList);
         setLoader(true);
     }
@@ -125,7 +148,7 @@ const AllUserData = () => {
         <>
 
             <div className="box">
-                <input type="text" onChange={(event) => handleSearch(event)} />
+                <input type="text" onChange={handleSearch} />
             </div>
 
             <section>
@@ -165,3 +188,7 @@ const AllUserData = () => {
 };
 
 export default AllUserData;
+
+
+
+

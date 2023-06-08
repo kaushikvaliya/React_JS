@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const AdminAdduserData = () => {
@@ -7,7 +8,7 @@ const AdminAdduserData = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setemail] = useState('');
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
 
     const registration = (event) => {
@@ -26,6 +27,9 @@ const AdminAdduserData = () => {
             setUsername(''); // Clear username input value
             setPassword(''); // Clear password input value
             setemail(''); // Clear email input value
+
+            // Navigate to the desired route
+            navigate("/admin/adminalluser");
 
         })
 
@@ -53,9 +57,9 @@ const AdminAdduserData = () => {
                     <i className="fas fa-lock"></i>
                     <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} onBlur={handleChange} className='thisrequired' name='password' />
                 </div>
-
-
                 <input type="submit" className="button" value="Save" />
+
+
 
             </form>
         </>

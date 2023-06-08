@@ -6,11 +6,11 @@ import CustomHook from '../Hooks/useCustomHook';
 
 
 const AdminMenu = () => {
-    const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
-
     const [isSidebarActive, setIsSidebarActive] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+
     const [cookies, setCookie, removeCookie] = useCookies([]);
+
 
 
     const handleSidebarToggle = () => {
@@ -20,11 +20,11 @@ const AdminMenu = () => {
     const handleThemeToggle = () => {
         setIsDarkTheme(!isDarkTheme);
     };
+
     const handleLogout = () => {
-        axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`).then((response) => {
-            removeCookie('username');
-            // navigate('/loginregistration');
-        });
+        removeCookie('username');
+        removeCookie('id');
+        console.log("Successfully logged out");
     };
     return (
         <>
@@ -32,6 +32,7 @@ const AdminMenu = () => {
             <aside id="sidebar" className={isSidebarActive ? 'sidebaractive' : ''}>
                 <div className="logo">
                     <div className="img">
+                        {/* <h1 className='text-center my-5'>Dashboard</h1> */}
                         <img src="https://img.freepik.com/premium-vector/abstract-vk-initials-vector-logo-design-monogram-icon-business-template-simple-elegant_619996-125.jpg?w=360"
                             alt="" />
                     </div>

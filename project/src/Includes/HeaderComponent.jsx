@@ -1,6 +1,5 @@
-
-
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import {
     MDBContainer,
     MDBNavbar,
@@ -9,18 +8,31 @@ import {
     MDBIcon,
     MDBNavbarNav,
     MDBNavbarItem,
-    MDBNavbarLink,
-    MDBBtn,
     MDBDropdown,
     MDBDropdownToggle,
     MDBDropdownMenu,
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import CustomHook from '../Hooks/useCustomHook';
 
 const FunctionCompoDynamicSubMenu = () => {
+    const { handleChange, inp, errors } = CustomHook({ role: '2' }, {});
     const [showBasic, setShowBasic] = useState(false);
+    const [cookies, setCookie, removeCookie] = useCookies([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(!!cookies.username); // Updated condition
+    // const [isLoggedIn, setIsLoggedIn] = useState(cookies.username !== undefined);
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        removeCookie('username');
+        removeCookie('id');
+        console.log("Successfully logged out");
+        setIsLoggedIn(false);
+        navigate("/loginregistration")
+    };
 
     const menuItems = [
         {
@@ -50,41 +62,38 @@ const FunctionCompoDynamicSubMenu = () => {
             ],
         },
         {
-            title: 'LoginRegistration',
-            url: `/loginregistration`,
-        },
-        {
             title: 'FetchAPI',
             url: `/fetchapi`,
         },
-
     ];
 
     const MenuData = menuItems.map((data, index) => {
         if (data.submenu != undefined) {
             var submenudata = data.submenu.map((submenu, index) => {
-                return <MDBDropdownItem key={index} link>{submenu.title}</MDBDropdownItem>
-            })
+                return <MDBDropdownItem key={index} link>{submenu.title}</MDBDropdownItem>;
+            });
         }
         if (data.submenu == null) {
-            return <MDBNavbarItem key={index}>
-                <Link className='nav-link' to={data.url}>
-                    {data.title}
-                </Link>
-            </MDBNavbarItem>
-        } else {
-            return <MDBNavbarItem key={index}>
-                <MDBDropdown>
-                    <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+            return (
+                <MDBNavbarItem key={index}>
+                    <Link className='nav-link' to={data.url}>
                         {data.title}
-                    </MDBDropdownToggle>
-                    <MDBDropdownMenu>
-                        {submenudata}
-                    </MDBDropdownMenu>
-                </MDBDropdown>
-            </MDBNavbarItem>
+                    </Link>
+                </MDBNavbarItem>
+            );
+        } else {
+            return (
+                <MDBNavbarItem key={index}>
+                    <MDBDropdown>
+                        <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+                            {data.title}
+                        </MDBDropdownToggle>
+                        <MDBDropdownMenu>{submenudata}</MDBDropdownMenu>
+                    </MDBDropdown>
+                </MDBNavbarItem>
+            );
         }
-    })
+    });
 
     return (
         <>
@@ -99,15 +108,29 @@ const FunctionCompoDynamicSubMenu = () => {
                         onClick={() => setShowBasic(!showBasic)}
                     >
                         <MDBIcon icon='bars' fas />
-
                     </MDBNavbarToggler>
-
-
 
                     <MDBCollapse navbar show={showBasic}>
                         <MDBNavbarNav className='ms-auto w-auto mb-2 mb-lg-0 '>
-                            {/* <MDBNavbarNav className='m-auto w-auto mb-2 mb-lg-0 '> */}
                             {MenuData}
+
+
+                            {isLoggedIn ? (
+                                <MDBNavbarItem>
+                                    <button onClick={handleLogout} className='nav-link btn btn-primary text-light'>
+                                        Logout
+                                    </button>
+                                </MDBNavbarItem>
+                            ) : (
+                                <MDBNavbarItem>
+                                    <Link className='nav-link btn btn-primary text-light' to='/loginregistration'>
+                                        Login
+                                    </Link>
+                                </MDBNavbarItem>
+                            )}
+
+
+
                         </MDBNavbarNav>
                     </MDBCollapse>
                 </MDBContainer>
@@ -122,7 +145,14 @@ export default FunctionCompoDynamicSubMenu;
 
 
 
-// import React, { useState } from 'react';
+
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { useCookies } from 'react-cookie';
 // import {
 //     MDBContainer,
 //     MDBNavbar,
@@ -131,17 +161,35 @@ export default FunctionCompoDynamicSubMenu;
 //     MDBIcon,
 //     MDBNavbarNav,
 //     MDBNavbarItem,
-//     MDBNavbarLink,
-//     MDBBtn,
 //     MDBDropdown,
 //     MDBDropdownToggle,
 //     MDBDropdownMenu,
 //     MDBDropdownItem,
 //     MDBCollapse,
 // } from 'mdb-react-ui-kit';
+// import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import CustomHook from '../Hooks/useCustomHook';
 
-// const HeaderComponent = () => {
+// const FunctionCompoDynamicSubMenu = () => {
+//     const { handleChange, inp, errors } = CustomHook({ role: '2' }, {});
 //     const [showBasic, setShowBasic] = useState(false);
+//     const [cookies, setCookie, removeCookie] = useCookies([]);
+//     // const navigate = useNavigate();
+//     const [isLoggedIn, setIsLoggedIn] = useState(cookies.username !== undefined);
+//     const [loade, setLoade] = useState(true);
+
+//     useEffect(() => {
+
+//     }, [loade]);
+
+
+//     const handleLogout = () => {
+//         removeCookie('username');
+//         setLoade(false)
+//         setIsLoggedIn(false);
+//     };
+
 //     const menuItems = [
 //         {
 //             title: 'Home',
@@ -152,10 +200,6 @@ export default FunctionCompoDynamicSubMenu;
 //             url: `/about`,
 //         },
 //         {
-//             title: 'contact',
-//             url: `/contact`,
-//         }
-//         , {
 //             title: 'Services',
 //             url: '/services',
 //             submenu: [
@@ -173,65 +217,39 @@ export default FunctionCompoDynamicSubMenu;
 //                 },
 //             ],
 //         },
-//         , {
-//             title: 'Tops',
-//             url: '/tops',
-//             submenu: [
-//                 {
-//                     title: 'web design',
-//                     url: 'web-design',
-//                 },
-//                 {
-//                     title: 'web development',
-//                     url: 'web-dev',
-//                 },
-//                 {
-//                     title: 'SEO',
-//                     url: 'seo',
-//                 },
-//             ],
+//         {
+//             title: 'FetchAPI',
+//             url: `/fetchapi`,
 //         },
-
 //     ];
 
-
-
 //     const MenuData = menuItems.map((data, index) => {
-//         // console.log(data.submenu);
-//         // jyare submenu madse tyare
 //         if (data.submenu != undefined) {
 //             var submenudata = data.submenu.map((submenu, index) => {
-//                 console.log("called inner loop", submenu);
-//                 return <MDBDropdownItem key={index}>
-//                     <MDBNavbarLink className='nav-link' href={submenu.url}>
-//                         {submenu.title}
-//                     </MDBNavbarLink>
-//                 </MDBDropdownItem>
-//             })
+//                 return <MDBDropdownItem key={index} link>{submenu.title}</MDBDropdownItem>;
+//             });
 //         }
-//         // jyare submenu madse nahi  tyare
 //         if (data.submenu == null) {
-//             // console.log('nandan', data.title);
-//             // console.log('nandan', data.url);
-//             return <MDBNavbarItem key={index}>
-//                 <MDBNavbarLink className='nav-link' href={data.url}>
-//                     {data.title}
-//                 </MDBNavbarLink>
-//             </MDBNavbarItem>
-//         } else {
-//             return < MDBNavbarItem key={index} >
-//                 <MDBDropdown>
-//                     <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+//             return (
+//                 <MDBNavbarItem key={index}>
+//                     <Link className='nav-link' to={data.url}>
 //                         {data.title}
-//                     </MDBDropdownToggle>
-//                     <MDBDropdownMenu>
-//                         {submenudata}
-//                     </MDBDropdownMenu>
-//                 </MDBDropdown>
-//             </ MDBNavbarItem>
+//                     </Link>
+//                 </MDBNavbarItem>
+//             );
+//         } else {
+//             return (
+//                 <MDBNavbarItem key={index}>
+//                     <MDBDropdown>
+//                         <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+//                             {data.title}
+//                         </MDBDropdownToggle>
+//                         <MDBDropdownMenu>{submenudata}</MDBDropdownMenu>
+//                     </MDBDropdown>
+//                 </MDBNavbarItem>
+//             );
 //         }
-//     })
-
+//     });
 
 //     return (
 //         <>
@@ -249,14 +267,22 @@ export default FunctionCompoDynamicSubMenu;
 //                     </MDBNavbarToggler>
 
 //                     <MDBCollapse navbar show={showBasic}>
-//                         <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+//                         <MDBNavbarNav className='ms-auto w-auto mb-2 mb-lg-0 '>
 //                             {MenuData}
+//                             {isLoggedIn ? (
+//                                 <MDBNavbarItem>
+//                                     <button onClick={handleLogout} className='nav-link btn btn-primary text-light'>
+//                                         Logout
+//                                     </button>
+//                                 </MDBNavbarItem>
+//                             ) : (
+//                                 <MDBNavbarItem>
+//                                     <Link className='nav-link btn btn-primary text-light' to='/loginregistration'>
+//                                         Login
+//                                     </Link>
+//                                 </MDBNavbarItem>
+//                             )}
 //                         </MDBNavbarNav>
-
-//                         <form className='d-flex input-group w-auto'>
-//                             <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-//                             <MDBBtn color='primary'>Search</MDBBtn>
-//                         </form>
 //                     </MDBCollapse>
 //                 </MDBContainer>
 //             </MDBNavbar>
@@ -264,5 +290,5 @@ export default FunctionCompoDynamicSubMenu;
 //     );
 // };
 
-// export default HeaderComponent;
+// export default FunctionCompoDynamicSubMenu;
 

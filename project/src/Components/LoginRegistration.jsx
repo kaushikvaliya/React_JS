@@ -18,7 +18,7 @@ const LoginRegistration = () => {
 
 
 
-    const [cookies, setCookie, removeCookie] = useCookies(['username']);
+    const [cookies, setCookie, removeCookie] = useCookies(['username', 'id']);
 
     function handleSignUpClick() {
         setIsSignUpMode(true);
@@ -29,12 +29,12 @@ const LoginRegistration = () => {
     }
 
 
-    const logout = () => {
-        axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`).then((response) => {
-            removeCookie('username');
-            // navigate('/loginregistration');
-        });
-    };
+    // const logout = () => {
+    //     axios.get(`http://localhost:5000/users?name=${inp.name}&password=${inp.password}`).then((response) => {
+    //         removeCookie('username');
+    //         // navigate('/loginregistration');
+    //     });
+    // };
 
     const savedata = async (event) => {
         event.preventDefault();
@@ -45,7 +45,7 @@ const LoginRegistration = () => {
         // console.log("inside name", inp.username);
         // console.log("inside password", inp.password);
         // console.log(inp.Password);
-        console.log(inp);
+        // console.log(inp); 
         try {
             const response = await axios.get(`http://localhost:5000/users?email=${inp.email}&password=${inp.password}`)
                 .then((res) => {
@@ -53,7 +53,7 @@ const LoginRegistration = () => {
                     if (res.status === 200) {
                         // console.log("server connected");
 
-                        console.log(res.data.length);
+                        // console.log(res.data.length);
                         if (res.data.length > 0) {
                             setCookie("username", res.data[0].name);
                             setCookie("id", res.data[0].id);
@@ -119,11 +119,11 @@ const LoginRegistration = () => {
     return (
         <>
 
-            {
+            {/* {
                 cookies.username && (
                     <button onClick={logout}>Logout</button>
                 )
-            }
+            } */}
 
 
 
