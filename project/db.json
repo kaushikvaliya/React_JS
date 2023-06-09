@@ -52,13 +52,6 @@
     },
     {
       "role": "2",
-      "name": "vkk",
-      "email": "valiya.kik001@gmail.com",
-      "password": "890",
-      "id": 3
-    },
-    {
-      "role": "2",
       "name": "Jane Smith",
       "email": "janesmith@example.com",
       "password": "987654321",
@@ -161,6 +154,21 @@
       "email": "jay.amin.tops@gmail.com",
       "password": "6yu",
       "id": 69
+    },
+    {
+      "role": "2",
+      "id": 70
+    },
+    {
+      "role": "2",
+      "id": 71
+    },
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "kaushikjjj",
+      "id": 72
     }
   ]
 }

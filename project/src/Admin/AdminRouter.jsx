@@ -14,6 +14,8 @@ const AdminRouter = () => {
     // const isLoggedIn = cookies.username !== undefined;
 
     useEffect(() => {
+        console.log("🚀 ~ file: AdminRouter.jsx:17 ~ useEffect ~ useEffect:")
+
         if (!cookies.id && !cookies.username) {
             navigate('/loginregistration');
         }

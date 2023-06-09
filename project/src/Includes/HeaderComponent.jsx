@@ -16,10 +16,8 @@ import {
 } from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import CustomHook from '../Hooks/useCustomHook';
 
 const FunctionCompoDynamicSubMenu = () => {
-    const { handleChange, inp, errors } = CustomHook({ role: '2' }, {});
     const [showBasic, setShowBasic] = useState(false);
     const [cookies, setCookie, removeCookie] = useCookies([]);
     const [isLoggedIn, setIsLoggedIn] = useState(!!cookies.username); // Updated condition
@@ -33,6 +31,10 @@ const FunctionCompoDynamicSubMenu = () => {
         setIsLoggedIn(false);
         navigate("/loginregistration")
     };
+
+    // const name = cookies.get('username');
+
+    // console.log("username", name);
 
     const menuItems = [
         {
@@ -128,8 +130,6 @@ const FunctionCompoDynamicSubMenu = () => {
                                     </Link>
                                 </MDBNavbarItem>
                             )}
-
-
 
                         </MDBNavbarNav>
                     </MDBCollapse>

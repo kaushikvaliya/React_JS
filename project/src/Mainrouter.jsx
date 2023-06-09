@@ -72,7 +72,7 @@ const Mainrouter = createBrowserRouter([
         element:
             <>
                 <Suspense fallback={<h1>Loading....</h1>}>
-                    <AdminRouter></AdminRouter>
+                    <AdminRouter />
                 </Suspense>
             </>
 

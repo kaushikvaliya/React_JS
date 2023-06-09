@@ -38,6 +38,7 @@ const LoginRegistration = () => {
 
     const savedata = async (event) => {
         event.preventDefault();
+
         // console.log("save data", inp);
         // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
         //     console.log(result);
@@ -93,6 +94,7 @@ const LoginRegistration = () => {
 
     const registration = (event) => {
         event.preventDefault();
+        console.log("------------>",)
 
         // console.log(inp);
 

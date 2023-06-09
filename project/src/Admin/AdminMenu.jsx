@@ -33,8 +33,8 @@ const AdminMenu = () => {
                 <div className="logo">
                     <div className="img">
                         {/* <h1 className='text-center my-5'>Dashboard</h1> */}
-                        <img src="https://img.freepik.com/premium-vector/abstract-vk-initials-vector-logo-design-monogram-icon-business-template-simple-elegant_619996-125.jpg?w=360"
-                            alt="" />
+                        {/* <img src="https://img.freepik.com/premium-vector/abstract-vk-initials-vector-logo-design-monogram-icon-business-template-simple-elegant_619996-125.jpg?w=360"
+                            alt="" /> */}
                     </div>
                 </div>
                 <div className="header_text">
