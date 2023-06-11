@@ -44,24 +44,21 @@
       "id": 1
     },
     {
-      "role": "2",
-      "name": "kaushik",
-      "email": "valiya.kaushik001@gmail.com",
-      "password": "12",
+      "name": "kaushik001",
+      "password": "valiya.kaushik001@gmail.com",
+      "email": "123",
       "id": 2
     },
     {
-      "role": "2",
-      "name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "password": "987654321",
+      "name": "Jane Smith ffff",
+      "password": "janesmith@example.com",
+      "email": "987654321",
       "id": 5
     },
     {
-      "role": "2",
-      "name": "Alice Johnson",
-      "email": "alicejohnson@example.com",
-      "password": "password456",
+      "name": "Alice Johnsonh",
+      "password": "alicejohnson@example.com",
+      "email": "password456",
       "id": 6
     },
     {
@@ -154,14 +151,6 @@
       "email": "jay.amin.tops@gmail.com",
       "password": "6yu",
       "id": 69
-    },
-    {
-      "role": "2",
-      "id": 70
-    },
-    {
-      "role": "2",
-      "id": 71
     },
     {
       "role": "2",

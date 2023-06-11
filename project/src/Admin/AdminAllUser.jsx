@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AllUserData = () => {
 
@@ -10,7 +10,7 @@ const AllUserData = () => {
 
     const [allUsers, setAllUsers] = useState(null);
     const [scarchData, setSearchData] = useState(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         savedata();
     }, [loade]);
@@ -23,6 +23,21 @@ const AllUserData = () => {
                 // savedata();
             })
     }
+
+
+    // localStorage
+
+
+    // const setToLocalStoreage = (id, name, password, email) => {
+    //     localStorage.setItem("id", id);
+    //     localStorage.setItem("name", name);
+    //     localStorage.setItem("password", password);
+    //     localStorage.setItem("email", email);
+
+
+    // }
+
+
     const generateUserRows = (userData) => {
         return Object.entries(userData).map(([key, value], i) => (
             <tr key={key}>
@@ -32,6 +47,17 @@ const AllUserData = () => {
                 <td>{value.id}</td>
                 <td>
                     <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edit</Link>
+
+                    {/* localStorage */}
+                    {/* <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`} onClick={() =>
+                        setToLocalStoreage(
+                            value.id,
+                            value.name,
+                            value.email,
+                            value.password
+
+                        )}>
+                        Edit</Link> */}
                 </td>
                 <td>
                     <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>
