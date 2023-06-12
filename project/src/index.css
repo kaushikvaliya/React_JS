@@ -71,7 +71,7 @@ form.sign-in-form {
     width: 100%;
     background-color: #f0f0f0;
     margin: 10px 0;
-    height: 55px;
+    height: 51px;
     border-radius: 55px;
     display: grid;
     grid-template-columns: 15% 85%;
@@ -82,7 +82,7 @@ form.sign-in-form {
 
 .input-field i {
     text-align: center;
-    line-height: 55px;
+    line-height: 51px;
     color: #acacac;
     transition: 0.5s;
     font-size: 1.1rem;
@@ -114,8 +114,8 @@ form.sign-in-form {
 }
 
 .social-icon {
-    height: 46px;
-    width: 46px;
+    height: 40px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -28,14 +28,14 @@ const AllUserData = () => {
     // localStorage
 
 
-    // const setToLocalStoreage = (id, name, password, email) => {
-    //     localStorage.setItem("id", id);
-    //     localStorage.setItem("name", name);
-    //     localStorage.setItem("password", password);
-    //     localStorage.setItem("email", email);
+    const setToLocalStoreage = (id, name, password, email) => {
+        localStorage.setItem("id", id);
+        localStorage.setItem("name", name);
+        localStorage.setItem("password", password);
+        localStorage.setItem("email", email);
 
 
-    // }
+    }
 
 
     const generateUserRows = (userData) => {
@@ -46,10 +46,10 @@ const AllUserData = () => {
                 <td>{value.email}</td>
                 <td>{value.id}</td>
                 <td>
-                    <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edit</Link>
+                    {/* <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edit</Link> */}
 
                     {/* localStorage */}
-                    {/* <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`} onClick={() =>
+                    <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`} onClick={() =>
                         setToLocalStoreage(
                             value.id,
                             value.name,
@@ -57,7 +57,7 @@ const AllUserData = () => {
                             value.password
 
                         )}>
-                        Edit</Link> */}
+                        Edit</Link>
                 </td>
                 <td>
                     <Link className='btn btn-danger' onClick={() => hendelDelete(value.id)} to='#'>DELETE</Link>

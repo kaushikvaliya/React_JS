@@ -44,18 +44,6 @@
       "id": 1
     },
     {
-      "name": "kaushik001",
-      "password": "valiya.kaushik001@gmail.com",
-      "email": "123",
-      "id": 2
-    },
-    {
-      "name": "Jane Smith ffff",
-      "password": "janesmith@example.com",
-      "email": "987654321",
-      "id": 5
-    },
-    {
       "name": "Alice Johnsonh",
       "password": "alicejohnson@example.com",
       "email": "password456",
@@ -83,10 +71,9 @@
       "id": 48
     },
     {
-      "role": "2",
-      "name": "User 49",
-      "email": "user49@example.com",
-      "password": "password49",
+      "name": "Users 49",
+      "password": "user49@example.com",
+      "email": "password49",
       "id": 49
     },
     {
@@ -95,13 +82,6 @@
       "email": "user50@example.com",
       "password": "password50",
       "id": 50
-    },
-    {
-      "role": "2",
-      "name": "kaushik",
-      "email": "jay.amin.tops@gmail.com",
-      "password": "578",
-      "id": 51
     },
     {
       "role": "2",
@@ -158,6 +138,49 @@
       "email": "valiya.kaushik001@gmail.com",
       "password": "kaushikjjj",
       "id": 72
+    },
+    {
+      "name": "valiya33",
+      "password": "valiya",
+      "email": "valiy22.@gmai.com",
+      "id": 74
+    },
+    {
+      "role": "2",
+      "name": "ketan",
+      "email": "ketan.@gmail.com",
+      "password": "ketan",
+      "id": 75
+    },
+    {
+      "name": "dddd",
+      "email": "ddd@gmile.com",
+      "password": "ddd",
+      "id": 76
+    },
+    {
+      "role": "2",
+      "name": "ff",
+      "email": "ka001@gmile.com",
+      "password": "5566",
+      "confirmPassword": "5566",
+      "id": 77
+    },
+    {
+      "role": "2",
+      "name": "oooo",
+      "email": "ka001@gmile.com",
+      "password": "567",
+      "confirmPassword": "564",
+      "id": 78
+    },
+    {
+      "role": "2",
+      "name": "kaushik111",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "33344",
+      "confirmPassword": "33344",
+      "id": 79
     }
   ]
 }
