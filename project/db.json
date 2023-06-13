@@ -181,6 +181,14 @@
       "password": "33344",
       "confirmPassword": "33344",
       "id": 79
+    },
+    {
+      "role": "2",
+      "name": "mehul",
+      "email": "mehul@mail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 80
     }
   ]
 }
