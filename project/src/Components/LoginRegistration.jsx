@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomHook from '../Hooks/useCustomHook';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,6 +17,7 @@ const LoginRegistration = () => {
     const [loginmes, setloginmes] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [registrationSuccess, setRegistrationSuccess] = useState(false); // Set registration success message
 
 
 
@@ -128,18 +129,26 @@ const LoginRegistration = () => {
             setemail(''); // Clear email input value
             setConfirmPassword(''); // Clear setConfirmPassword input value
 
+            // Set registration success message
+            setRegistrationSuccess('Registration successful');
+
+            // Clear the success message after 3 seconds
+            setTimeout(() => {
+                setRegistrationSuccess('');
+            }, 3000);
+
+
+
         })
 
     }
 
+
+
     return (
         <>
 
-            {/* {
-                cookies.username && (
-                    <button onClick={logout}>Logout</button>
-                )
-            } */}
+
 
 
 
@@ -168,6 +177,7 @@ const LoginRegistration = () => {
                                         <div className="input-field">
                                             <i className="fas fa-lock"></i>
                                             <input
+                                                required
                                                 type={showPassword ? 'text' : 'password'}
                                                 name='password'
                                                 onBlur={handleChange}
@@ -177,12 +187,13 @@ const LoginRegistration = () => {
 
                                         <div className="form-check">
                                             <input
+                                                required
                                                 className="form-check-input"
                                                 type="checkbox"
                                                 checked={showPassword}
                                                 onChange={handleShowPasswordChange}
                                             />
-                                            <label className="form-check-label">
+                                            <label className="form-check-label text-dark">
                                                 Show Password
                                             </label>
                                         </div>
@@ -217,23 +228,25 @@ const LoginRegistration = () => {
                                                 </div>
                                             </div>
                                         </div> : ""}
+
                                     </form>
 
                                     <form action="#" className="sign-up-form" onSubmit={registration}>
                                         <h2 className="title">Sign up</h2>
                                         <div className="input-field">
                                             <i className="fas fa-user"></i>
-                                            <input type="text" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} onBlur={handleChange} className='thisrequired' name='name' />
+                                            <input required type="text" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} onBlur={handleChange} className='thisrequired' name='name' />
                                         </div>
                                         <div className="input-field">
                                             <i className="fas fa-envelope"></i>
-                                            <input type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="Email" onBlur={handleChange} className='thisrequired' name='email' />
+                                            <input required type="email" value={email} onChange={(e) => setemail(e.target.value)} placeholder="Email" onBlur={handleChange} className='thisrequired' name='email' />
                                         </div>
 
 
                                         <div className="input-field">
                                             <i className="fas fa-lock"></i>
                                             <input
+                                                required
                                                 type={showPassword ? "text" : "password"}
                                                 value={password}
                                                 placeholder="Password"
@@ -247,6 +260,7 @@ const LoginRegistration = () => {
                                         <div className="input-field">
                                             <i className="fas fa-lock"></i>
                                             <input
+
                                                 type={showPassword ? 'text' : 'password'}
                                                 value={confirmPassword}
                                                 placeholder="Confirm Password"
@@ -264,12 +278,12 @@ const LoginRegistration = () => {
                                                 checked={showPassword}
                                                 onChange={handleShowPasswordChange}
                                             />
-                                            <label className="form-check-label">
+                                            <label className="form-check-label text-dark">
                                                 Show Password
                                             </label>
                                         </div>
-
                                         <input type="submit" className="button" value="Sign up" />
+                                        <p>{registrationSuccess ? registrationSuccess : ""}</p>
                                         <p className="social-text">Or Sign up with social platforms</p>
                                         <div className="social-media">
                                             <a href="#" className="social-icon">
@@ -285,6 +299,8 @@ const LoginRegistration = () => {
                                                 <i className="fab fa-linkedin-in"></i>
                                             </a>
                                         </div>
+
+
                                     </form>
                                 </div>
                             </div>
@@ -318,6 +334,9 @@ const LoginRegistration = () => {
                                         </button>
                                     </div>
                                     {/* <img src="img/register.svg" className="image" alt="" /> */}
+
+
+
                                 </div>
                             </div>
                         </div>

@@ -131,8 +131,6 @@ const AllUserData = () => {
 
 
 
-
-
     const handleSearch = (event) => {
         console.log("allUsers ", allUsers);
         console.log("handleSearch ", event.target.value);

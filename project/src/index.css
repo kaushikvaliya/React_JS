@@ -417,7 +417,7 @@ form.sign-in-form {
 
 input[type="text"] {
     width: 100%;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding: 5px;
 }
 
@@ -578,4 +578,94 @@ nav {
 .nav_link button {
     border: none;
     display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #1e293b;
+}
+
+.app {
+    width: 50%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.tag-list {
+    width: 30rem;
+    max-width: 90vw;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 1rem 0;
+    position: relative;
+    padding: 1.5rem 0;
+    overflow: hidden;
+}
+
+.loop-slider .inner {
+    display: flex;
+    width: fit-content;
+
+    animation: var(--duration) linear infinite var(--direction) loop;
+
+    /* animation-name: loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: var(--direction);
+    animation-duration: var(--duration); */
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    background-color: #334155;
+    border-radius: 0.4rem;
+    padding: 8px 20px;
+    margin: 0 8px;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.2rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+.tag span {
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+.fade:not(.show) {
+    opacity: 1;
+}
+
+.fade {
+    pointer-events: none;
+    background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+    position: absolute;
+    inset: 0;
+}
+
+@keyframes loop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
