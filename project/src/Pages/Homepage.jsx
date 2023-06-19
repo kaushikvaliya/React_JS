@@ -55,8 +55,45 @@
 
 
 import React from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const Homepage = () => {
+
+
+
+
+
+    const settings = {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        speed: 300,
+        infinite: true,
+        autoplaySpeed: 5000,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    };
+
+
+
+
     const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2'];
     const TAGS = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Tailwind', 'React', 'Next.js', 'Gatsby', 'UI/UX', 'SVG', 'animation', 'webdev'];
     const DURATION = 15000;
@@ -81,29 +118,84 @@ const Homepage = () => {
     };
 
     return (
-        <div>
-            <div className='app'>
-                <div className='tag-list'>
-                    {[...new Array(ROWS)].map((_, i) => (
-                        <InfiniteLoopSlider key={i} duration={random(DURATION - 5000, DURATION + 5000)} reverse={i % 2}>
-                            {shuffle(TAGS).slice(0, TAGS_PER_ROW).map(tag => (
-                                <div className='tag' key={tag}><span></span> {tag}</div>
-                            ))}
+        <>
 
-                            {/* COLORS   add  teg  */}
+            <div>
+                <div className='app'>
+                    <div className='tag-list'>
+                        {[...new Array(ROWS)].map((_, i) => (
+                            <InfiniteLoopSlider key={i} duration={random(DURATION - 5000, DURATION + 5000)} reverse={i % 2}>
+                                {shuffle(TAGS).slice(0, TAGS_PER_ROW).map(tag => (
+                                    <div className='tag' key={tag}><span></span> {tag}</div>
+                                ))}
 
-                            {/* {shuffle(TAGS).slice(0, TAGS_PER_ROW).map((tag, index) => (
+                                {/* COLORS   add  teg  */}
+
+                                {/* {shuffle(TAGS).slice(0, TAGS_PER_ROW).map((tag, index) => (
                                 <div className='tag' key={tag} style={{ backgroundColor: COLORS[index] }}>
                                     <span></span> {tag}
                                 </div>
                             ))} */}
 
-                        </InfiniteLoopSlider>
-                    ))}
-                    <div className='fade' />
+                            </InfiniteLoopSlider>
+                        ))}
+                        <div className='fade' />
+                    </div>
                 </div>
             </div>
-        </div>
+
+
+
+
+            <div className="container">
+
+                <Slider {...settings}>
+                    <div>
+                        Slide 1 content
+                    </div>
+                    <div>
+                        Slide 2 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                    <div>
+                        Slide 3 content
+                    </div>
+                </Slider>
+            </div>
+
+
+        </>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     );
 };
 
@@ -309,4 +401,4 @@ export default Homepage;
 //     );
 // }
 
-// export default Calculator;
+// export default Calculator; 
