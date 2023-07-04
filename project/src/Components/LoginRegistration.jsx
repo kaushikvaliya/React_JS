@@ -177,7 +177,6 @@ const LoginRegistration = () => {
                                         <div className="input-field">
                                             <i className="fas fa-lock"></i>
                                             <input
-                                                required
                                                 type={showPassword ? 'text' : 'password'}
                                                 name='password'
                                                 onBlur={handleChange}
@@ -187,7 +186,6 @@ const LoginRegistration = () => {
 
                                         <div className="form-check">
                                             <input
-                                                required
                                                 className="form-check-input"
                                                 type="checkbox"
                                                 checked={showPassword}

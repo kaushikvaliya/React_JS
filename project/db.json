@@ -285,6 +285,21 @@
       "password": "test",
       "confirmPassword": "test",
       "id": 92
+    },
+    {
+      "name": "kk",
+      "email": "test@test.com",
+      "password": "77",
+      "confirmPassword": "77",
+      "id": 93
+    },
+    {
+      "role": "2",
+      "name": "kaushik111",
+      "email": "ka001@gmile.com",
+      "password": "4455",
+      "confirmPassword": "4455",
+      "id": 94
     }
   ]
 }
