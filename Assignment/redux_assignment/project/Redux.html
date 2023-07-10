@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            font-size: 22px;
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <h3>what is redux ?</h3>
+            <p><span><b>Ans:&nbsp;&nbsp;</b></span>Redux is an open-source JavaScript library used to manage application
+                state. React uses Redux for building the user interface. </p>
+            <p>React Redux is the official React binding for Redux. It allows React components to read data from a Redux
+                Store, and dispatch Actions to the Store to update data. Redux helps apps to scale by providing a
+                sensible way to manage state through a unidirectional data flow model. React Redux is conceptually
+                simple. It subscribes to the Redux store, checks to see if the data which your component wants have
+                changed, and re-renders your component.</p>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="text-align: center;">
+                    <h3>redux_cycle</h3>
+                    <img src="./img/redux_cycle.gif" alt="" width="500px">
+                </div>
+                <div style="text-align: center;">
+                    <h3>redux-architecture</h3>
+                    <img src="./img/react-redux-architecture.png" alt="" width="500px">
+                </div>
+            </div>
+        </li>
+        <li>
+            <h3>What is Redux Thunk used for?</h3>
+            <p><span><b>Ans:&nbsp;&nbsp;</b></span>“Redux Thunk middleware allows you to write action creators that
+                return a function instead of an action.” For me personally, it makes more sense to think of these thunk
+                functions as services since they don't return actions. Remember that actions are plain objects. </p>
+            <div style="text-align: center;">
+                <h3> Redux Thunk</h3>
+                <img src="./img/thunk_1.png" alt="" width="500px">
+            </div>
+        </li>
+        <li>
+            <h3>What is Pure Component? When to use Pure Component over Component?</h3>
+            <p><span><b>Ans:&nbsp;&nbsp;</b></span>A React component is considered pure if it renders the same output
+                for the same state and props. For this
+                type of class component, React provides the <code><span >PureComponent</span></code> base class. Class
+                components
+                that extend the
+                <code><span>React</span><span >.</span><span >PureComponent</span></code>
+                class are treated as pure components.
+            </p>
+
+            <p>Pure components have some performance improvements and render optimizations since React implements
+                the <code><span >shouldComponentUpdate</span><span>()</span></code>
+                method for them with a shallow comparison for props and state.</p>
+
+            <pre>
+                    import React from 'react';
+
+                    class PercentageStat extends React.PureComponent {
+
+                        render() {
+                        const { label, score = 0, total = Math.max(1, score) } = this.props;
+
+                        return (
+                            &lt;div&gt;
+                            &lt;h6&gt;{label} &lt;/h6&gt; 
+                            &lt;span&gt;{ Math.round(score / total * 100) }%&lt;/span&gt;
+                            &lt;/div&gt;
+                             )
+                    }
+
+                    }
+
+                    export default PercentageStat;
+                </pre>
+            <div style="text-align: center;">
+                <h3> Redux Thunk</h3>
+                <img src="./img/thunk_1.png" alt="" width="500px">
+            </div>
+        </li>
+        <li>
+            <h3>What is Pure Component? When to use Pure Component over Component?</h3>
+            <p><span><b>Ans:&nbsp;&nbsp;</b></span>The second argument that can optionally be passed to setState is a
+                callback function which gets called immediately after the setState is completed and the components get
+                re-rendered.</p>
+
+            <p>If you want your program to update the value of a state using setState and then perform certain actions
+                on the updated value of state then you must specify those actions in a function which should be the
+                second argument of the setState. If we would not do so then those actions will be performed on the
+                previous value of state because of asynchronous nature of setState.</p>
+
+
+        </li>
+
+    </ul>
+
+</body>
+
+</html>
